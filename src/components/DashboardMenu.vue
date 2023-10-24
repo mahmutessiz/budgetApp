@@ -13,7 +13,7 @@
         <li>Log out</li>
       </ul>
       <div class="sm:hidden">
-        <label class="btn btn-circle swap swap-rotate">
+        <label class="btn border-0 bg-white dark:bg-transparent swap swap-rotate">
           <!-- this hidden checkbox controls the state -->
           <input type="checkbox" />
 
