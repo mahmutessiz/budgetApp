@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="max-w-[15rem]">
+  <div class="max-w-[15rem] hidden sm:block">
     <ul class="w-full flex gap-4 p-4 border-r flex-col justify-center border-base-200">
       <li>
         <div class="avatar placeholder">
