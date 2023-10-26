@@ -7,7 +7,6 @@ import DashboardMain from '../components/DashboardMain.vue'
   <div>
     <DashboardMenu />
     <div class="w-full flex border border-red-400">
-      <DashboardSidebar />
       <DashboardMain />
     </div>
   </div>
