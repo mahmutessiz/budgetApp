@@ -5,7 +5,7 @@
       <table class="table table-zebra">
         <!-- head -->
         <thead>
-          <tr class="hover">
+          <tr class="hover dark:bg-green-900 dark:text-white/60">
             <th></th>
             <th>Amount</th>
             <th>Category</th>
