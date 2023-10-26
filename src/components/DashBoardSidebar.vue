@@ -7,7 +7,6 @@
             <span class="text-xs">M</span>
           </div>
         </div>
-
         Mahmut
       </li>
       <li>add</li>
