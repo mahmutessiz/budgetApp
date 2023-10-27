@@ -29,7 +29,16 @@ const data = {
 // The `const options` object is defining the options or configurations for the line chart.
 const options = {
   responsive: true,
-  maintainAspectRatio: false
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false
+    },
+    title: {
+      display: true,
+      text: 'Balance History'
+    }
+  }
 }
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)

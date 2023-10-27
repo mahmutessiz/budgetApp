@@ -21,6 +21,10 @@ const options = {
   plugins: {
     legend: {
       display: false
+    },
+    title: {
+      display: true,
+      text: 'Spendings'
     }
   }
 }
