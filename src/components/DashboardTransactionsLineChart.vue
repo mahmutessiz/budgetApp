@@ -19,7 +19,8 @@ const data = {
   datasets: [
     {
       label: 'Balance History',
-      backgroundColor: '#f87979',
+      backgroundColor: '#00ff00',
+      borderColor: '#0000ff',
       data: [40, 39, 10, 40, 39, 80, 40]
     }
   ]
