@@ -7,12 +7,14 @@ import DashboardDoughnutChart from './DashboardDoughnutChart.vue'
 
 <template>
   <main class="flex flex-wrap w-full">
-    <DashboardMainBalance />
-    <DashboardTransactions class="mt-12" />
-    <div class="w-full grid grid-cols-12 grid-flow-row bg-base-100 mt-12 gap-4">
-      <DashboardDoughnutChart class="col-span-6" />
-      <div class="divider divider-horizontal"></div>
-      <DashboardTransactionsLineChart class="col-span-6" />
+    <DashboardMainBalance class="mb-12" />
+    <DashboardTransactions class="mb-12" />
+    <div
+      class="w-full flex flex-wrap md:grid md:grid-cols-12 md:grid-flow-row bg-base-100 mb-12 p-2 gap-4"
+    >
+      <DashboardDoughnutChart class="col-span-5" />
+      <div class="divider divider-horizontal col-span-1 hidden md:block"></div>
+      <DashboardTransactionsLineChart class="col-span-6 mb-12" />
     </div>
   </main>
 </template>
