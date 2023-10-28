@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
   <div class="w-full p-2 sm:p-4">
-    <div class="overflow-x-auto">
+    <div class="overflow-x-auto shadow dark:shadow-white/20">
       <table class="table table-zebra">
         <!-- head -->
         <thead>
