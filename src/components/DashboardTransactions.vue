@@ -23,19 +23,17 @@ onMounted(() => {
         </caption>
         <thead>
           <tr class="hover dark:bg-green-900 dark:text-white/60">
-            <th></th>
+            <th>Date</th>
             <th>Category</th>
             <th>Amount</th>
-            <th>Date</th>
           </tr>
         </thead>
         <!-- tbody -->
         <tbody>
           <tr class="hover" v-for="(transaction, index) in transactions" :key="index">
-            <th>{{ index + 1 }}</th>
-            <td>{{ transaction.category_name }}</td>
-            <td>{{ transaction.amount }}</td>
             <td>{{ transaction.date }}</td>
+            <td>{{ transaction.category_name }}</td>
+            <td>${{ transaction.amount }}</td>
           </tr>
         </tbody>
       </table>
