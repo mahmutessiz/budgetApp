@@ -6,7 +6,7 @@ import DashBoardSidebar from '../components/DashBoardSidebar.vue'
 <template>
   <div>
     <DashboardMenu />
-    <div class="w-full flex border border-red-400">
+    <div class="w-full flex border border-red-400 mb-12">
       <DashBoardSidebar />
       <DashboardMain />
     </div>
