@@ -4,8 +4,9 @@ import { getTransactions } from '../composables/getTransactions.js'
 
 const transactions = ref([])
 
-onMounted(() => {
-  getTransactions(transactions)
+onMounted(async () => {
+  await getTransactions(transactions)
+  transactions.value.sort((a, b) => new Date(b.date) - new Date(a.date))
 })
 </script>
 <template>

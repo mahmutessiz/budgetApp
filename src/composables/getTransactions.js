@@ -23,26 +23,54 @@ async function getMonthlyTotals() {
     December: 0
   }
 
+  const currentYear = new Date().getFullYear()
+
   data.forEach((transaction) => {
-    let month = new Date(transaction.date).getMonth()
-    let monthNames = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
-    ]
-    monthlyTotals[monthNames[month]] += transaction.amount
+    let transactionDate = new Date(transaction.date)
+    let month = transactionDate.getMonth()
+    let year = transactionDate.getFullYear()
+
+    if (year === currentYear) {
+      let monthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+      ]
+      monthlyTotals[monthNames[month]] += transaction.amount
+    }
   })
 
   return monthlyTotals
 }
 
-export { getTransactions, getMonthlyTotals }
+async function getCategoryTotals() {
+  const { data } = await supabase.from('budget_app').select('amount, category_name')
+
+  let categoryTotals = { categories: [], totalAmounts: [] }
+  let categoryIndex = {}
+
+  data.forEach((transaction) => {
+    let categoryName = transaction.category_name
+
+    if (categoryIndex[categoryName] !== undefined) {
+      categoryTotals.totalAmounts[categoryIndex[categoryName]] += transaction.amount
+    } else {
+      categoryIndex[categoryName] = categoryTotals.categories.length
+      categoryTotals.categories.push(categoryName)
+      categoryTotals.totalAmounts.push(transaction.amount)
+    }
+  })
+
+  return categoryTotals
+}
+
+export { getTransactions, getMonthlyTotals, getCategoryTotals }
