@@ -22,7 +22,7 @@ onMounted(async () => {
     labels: Object.keys(monthlyTotals),
     datasets: [
       {
-        label: 'Balance History',
+        label: 'Spending History',
         backgroundColor: '#00ff00',
         borderColor: '#0000ff',
         data: Object.values(monthlyTotals)
@@ -40,7 +40,7 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Balance History'
+      text: 'Spending History'
     }
   }
 }
