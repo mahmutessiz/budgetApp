@@ -1,16 +1,11 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import { supabase } from '../lib/supabaseClient'
+import { getTransactions } from '../composables/getTransactions.js'
 
 const transactions = ref([])
 
-async function getTransactions() {
-  const { data } = await supabase.from('budget_app').select()
-  transactions.value = data
-}
-
 onMounted(() => {
-  getTransactions()
+  getTransactions(transactions)
 })
 </script>
 <template>

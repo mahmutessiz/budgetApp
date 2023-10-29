@@ -1,6 +1,6 @@
 <script setup>
-// The code is importing various components and classes from the 'chart.js' library and the
-// 'vue-chartjs' library.
+import { ref, onMounted } from 'vue'
+import { getMonthlyTotals } from '../composables/getTransactions.js'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,20 +13,24 @@ import {
 } from 'chart.js'
 import { Line } from 'vue-chartjs'
 
-// The `const data` object is defining the data that will be used to populate the line chart.
-const data = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      label: 'Balance History',
-      backgroundColor: '#00ff00',
-      borderColor: '#0000ff',
-      data: [40, 39, 10, 40, 39, 80, 40]
-    }
-  ]
-}
+const data = ref({})
 
-// The `const options` object is defining the options or configurations for the line chart.
+onMounted(async () => {
+  const monthlyTotals = await getMonthlyTotals()
+
+  data.value = {
+    labels: Object.keys(monthlyTotals),
+    datasets: [
+      {
+        label: 'Balance History',
+        backgroundColor: '#00ff00',
+        borderColor: '#0000ff',
+        data: Object.values(monthlyTotals)
+      }
+    ]
+  }
+})
+
 const options = {
   responsive: true,
   maintainAspectRatio: false,
@@ -43,6 +47,7 @@ const options = {
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 </script>
+
 <template>
-  <div class="w-full"><Line :data="data" :options="options" /></div>
+  <div class="w-full" v-if="data.labels"><Line :data="data" :options="options" /></div>
 </template>
