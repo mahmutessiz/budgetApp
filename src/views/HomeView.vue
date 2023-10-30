@@ -13,7 +13,13 @@ async function getCountries() {
   countries.value = data
 }
 
-onMounted(() => {
+const logout = async () => {
+  let { error } = await supabase.auth.signOut()
+  console.log('succesfull logout', error)
+  console.log(await supabase.auth.getUser())
+}
+
+onMounted(async () => {
   getCountries()
 })
 </script>
@@ -22,6 +28,7 @@ onMounted(() => {
   <main>
     <ul>
       <li v-for="country in countries" :key="country.id">{{ country.name }}</li>
+      <button class="btn btn-error" @click="logout">tikla</button>
     </ul>
   </main>
 </template>
