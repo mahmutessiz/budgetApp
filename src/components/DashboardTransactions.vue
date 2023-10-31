@@ -14,7 +14,7 @@ onMounted(async () => {
     <div class="overflow-x-auto shadow dark:shadow-white/20 h-96">
       <table class="table table-zebra table-pin-rows">
         <!-- head -->
-        <caption class="text-xl">
+        <caption class="text-xl py-3 text-green-200/80">
           Transactions
         </caption>
         <thead>
