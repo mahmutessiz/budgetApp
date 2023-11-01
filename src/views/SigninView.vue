@@ -53,19 +53,23 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
+
+const router = useRouter()
 
 const email = ref('')
 const password = ref('')
 
 const handleLogin = async () => {
   try {
-    const { error } = await supabase.auth.signInWithPassword({
-      email: email.value,
-      password: password.value
-    })
-    console.log(await supabase.auth.getUser())
+    const { error } = await supabase.auth
+      .signInWithPassword({
+        email: email.value,
+        password: password.value
+      })
+      .then(router.push('/dashboard'))
     if (error) throw error
   } catch (error) {
     alert(error.error_description || error.message)
