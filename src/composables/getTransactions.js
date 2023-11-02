@@ -1,12 +1,20 @@
 import { supabase } from '../lib/supabaseClient'
+import { useRoute } from 'vue-router'
 
 export default async function getTransactions(array) {
-  const { data } = await supabase.from('budget_app').select()
+  const route = useRoute()
+  const userId = route.query.user
+
+  const { data } = await supabase.from('transactions').select().eq('user_id', userId)
+
   array.value = data
 }
 
 async function getMonthlyTotals() {
-  const { data } = await supabase.from('budget_app').select('amount, date')
+  const route = useRoute()
+  const userId = route.query.user
+
+  const { data } = await supabase.from('transactions').select('amount, date').eq('user_id', userId)
 
   let monthlyTotals = {
     January: 0,
@@ -53,7 +61,13 @@ async function getMonthlyTotals() {
 }
 
 async function getCategoryTotals() {
-  const { data } = await supabase.from('budget_app').select('amount, category_name')
+  const route = useRoute()
+  const userId = route.query.user
+
+  const { data } = await supabase
+    .from('transactions')
+    .select('amount, category_name')
+    .eq('user_id', userId)
 
   let categoryTotals = { categories: [], totalAmounts: [] }
   let categoryIndex = {}
