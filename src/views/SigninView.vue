@@ -62,15 +62,18 @@ const router = useRouter()
 const email = ref('')
 const password = ref('')
 
+// The `handleLogin` function is an asynchronous function that is triggered when the user submits the
+// login form.
 const handleLogin = async () => {
   try {
-    const { error } = await supabase.auth
-      .signInWithPassword({
-        email: email.value,
-        password: password.value
-      })
-      .then(router.push('/dashboard'))
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email.value,
+      password: password.value
+    })
+
     if (error) throw error
+
+    if (data) router.push({ path: '/dashboard', query: { user: data.user.id } })
   } catch (error) {
     alert(error.error_description || error.message)
   }

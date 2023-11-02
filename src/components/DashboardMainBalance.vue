@@ -17,13 +17,18 @@
 <script setup>
 import { useUserBalance } from '../composables/getBalance.js'
 import { onMounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
 
+// The code is using the Vue Router's `useRoute` function to get the current route object. It then
+// extracts the `user` query parameter from the route object and assigns it to the `userId` variable.
+const route = useRoute()
+const userId = route.query.user
 const userBalance = ref()
 
 const { balance, getUserBalance } = useUserBalance()
 
 onMounted(async () => {
-  await getUserBalance()
+  await getUserBalance(userId)
   userBalance.value = balance.value
 })
 </script>
