@@ -32,7 +32,7 @@
               class="dropdown-content z-[1] menu p-2 shadow-md shadow-black bg-base-100 rounded-box w-52"
             >
               <li><button onclick="my_modal_2.showModal()">Income</button></li>
-              <li><button>Transaction</button></li>
+              <li><button onclick="my_modal_3.showModal()">Transaction</button></li>
             </ul>
           </div>
         </a>
@@ -85,6 +85,15 @@
         <button>close</button>
       </form>
     </dialog>
+    <dialog id="my_modal_3" class="modal">
+      <div class="modal-box">
+        <p class="py-4">Click outside to close</p>
+        <AddTransactionForm class="" />
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
   </div>
 </template>
 <script setup>
@@ -92,6 +101,7 @@ import { supabase } from '../lib/supabaseClient'
 import { useRouter } from 'vue-router'
 
 import AddIncomeForm from './dashboard/AddIncomeForm.vue'
+import AddTransactionForm from './dashboard/AddTransactionForm.vue'
 
 const router = useRouter()
 const handleLogOut = async () => {
