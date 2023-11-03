@@ -25,7 +25,7 @@
               d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
             />
           </svg>
-          Add new
+          <button class="btn" onclick="my_modal_2.showModal()">Add new</button>
         </a>
       </li>
       <li>
@@ -63,9 +63,35 @@
               d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
             />
           </svg>
-          Logout
+          <button @click="handleLogOut" class="w-min">Logout</button>
         </a>
       </li>
     </ul>
+    <dialog id="my_modal_2" class="modal">
+      <div class="modal-box">
+        <p class="py-4">Click outside to close</p>
+        <AddIncomeForm class="" />
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
   </div>
 </template>
+<script setup>
+import { supabase } from '../lib/supabaseClient'
+import { useRouter } from 'vue-router'
+
+import AddIncomeForm from './dashboard/AddIncomeForm.vue'
+
+const router = useRouter()
+const handleLogOut = async () => {
+  try {
+    let { error } = await supabase.auth.signOut()
+    await router.push('/')
+    console.log('succesfull logout', error)
+  } catch (error) {
+    console.log(error)
+  }
+}
+</script>
