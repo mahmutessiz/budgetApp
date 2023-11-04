@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
 
 <template>
   <header class="w-full flex justify-between p-4 items-center">
@@ -7,10 +9,11 @@
     </div>
     <div>
       <ul class="w-full sm:flex justify-between gap-4 pr-12 hidden">
-        <li>Home</li>
+        <li><RouterLink to="/">Home</RouterLink></li>
         <li>About</li>
         <li>dark</li>
-        <li>Log out</li>
+        <li><RouterLink to="/login">Login</RouterLink></li>
+        <li><RouterLink to="/signup">Signup</RouterLink></li>
       </ul>
       <div class="sm:hidden">
         <label class="btn border-0 bg-white dark:bg-transparent swap swap-rotate">
