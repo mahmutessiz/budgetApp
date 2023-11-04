@@ -33,9 +33,6 @@ import { useGetSpendings } from '../composables/getMonthlySpendingsTotal'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
-import { SupabaseClient } from '@supabase/supabase-js'
-import { supabase } from '../lib/supabaseClient'
-
 const route = useRoute()
 const userId = route.query.user
 const userBalance = ref()
@@ -44,8 +41,6 @@ const userSpending = ref()
 const { balance, getUserBalance } = useUserBalance()
 
 onMounted(async () => {
-  const { data, error } = await supabase.auth.getUser()
-  console.log(data, error)
   await getUserBalance(userId)
   userBalance.value = balance.value
 
