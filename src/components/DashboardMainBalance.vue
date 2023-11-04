@@ -11,24 +11,45 @@
         <span class="font-normal text-green-600 text-xl">Balance:</span><br />
         <span class="font-normal text-green-600 text-xl">$ </span>*****
       </div>
+
+      <div class="text-3xl text-rose-500 font-bold font-mono self-start ml-4" v-if="userBalance">
+        <span class="font-normal text-rose-600 text-xl">Total spendings:</span><br />
+        <span class="font-normal text-rose-600 text-xl">$ </span>{{ userSpending
+        }}<span class="text-sm text-rose-600">/month</span>
+      </div>
+      <div class="text-3xl text-green-500 font-bold font-mono self-start ml-4" v-else>
+        <span class="font-normal text-rose-600 text-xl">Total spendings:</span><br />
+        <span class="font-normal text-rose-600 text-xl">$ </span>*****<span
+          class="text-sm text-rose-600"
+          >/month</span
+        >
+      </div>
     </div>
   </div>
 </template>
 <script setup>
 import { useUserBalance } from '../composables/getBalance.js'
+import { useGetSpendings } from '../composables/getMonthlySpendingsTotal'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
-// The code is using the Vue Router's `useRoute` function to get the current route object. It then
-// extracts the `user` query parameter from the route object and assigns it to the `userId` variable.
+import { SupabaseClient } from '@supabase/supabase-js'
+import { supabase } from '../lib/supabaseClient'
+
 const route = useRoute()
 const userId = route.query.user
 const userBalance = ref()
+const userSpending = ref()
 
 const { balance, getUserBalance } = useUserBalance()
 
 onMounted(async () => {
+  const { data, error } = await supabase.auth.getUser()
+  console.log(data, error)
   await getUserBalance(userId)
   userBalance.value = balance.value
+
+  const spending = await useGetSpendings(userId)
+  userSpending.value = spending
 })
 </script>
