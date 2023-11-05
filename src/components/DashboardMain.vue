@@ -10,8 +10,8 @@ import DashboardIncomeTable from './DashboardIncomeTable.vue'
   <main class="flex flex-wrap w-full">
     <DashboardMainBalance class="mb-12" />
     <div class="mb-12 w-full flex flex-wrap md:flex-nowrap">
-      <DashboardTransactions class="md:w-[65%]" />
       <DashboardIncomeTable class="md:w-[35%]" />
+      <DashboardTransactions class="md:w-[65%]" />
     </div>
 
     <div
