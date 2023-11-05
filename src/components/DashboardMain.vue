@@ -3,12 +3,17 @@ import DashboardMainBalance from './DashboardMainBalance.vue'
 import DashboardTransactions from './DashboardTransactions.vue'
 import DashboardTransactionsLineChart from './DashboardTransactionsLineChart.vue'
 import DashboardDoughnutChart from './DashboardDoughnutChart.vue'
+import DashboardIncomeTable from './DashboardIncomeTable.vue'
 </script>
 
 <template>
   <main class="flex flex-wrap w-full">
     <DashboardMainBalance class="mb-12" />
-    <DashboardTransactions class="mb-12" />
+    <div class="mb-12 w-full flex flex-wrap md:flex-nowrap">
+      <DashboardTransactions class="md:w-[65%]" />
+      <DashboardIncomeTable class="md:w-[35%]" />
+    </div>
+
     <div
       class="w-full flex flex-wrap md:grid md:grid-cols-12 md:grid-flow-row bg-base-100 mb-12 p-2 gap-4"
     >
