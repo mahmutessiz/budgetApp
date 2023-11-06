@@ -42,19 +42,36 @@
       </li>
       <li>
         <a>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
+            <g
+              fill="none"
+              stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-            />
+            >
+              <path stroke-dasharray="20" stroke-dashoffset="20" d="M3 3V21">
+                <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="20;0" />
+              </path>
+              <path stroke-dasharray="15" stroke-dashoffset="15" d="M21 12H7.5">
+                <animate
+                  fill="freeze"
+                  attributeName="stroke-dashoffset"
+                  begin="0.4s"
+                  dur="0.2s"
+                  values="15;0"
+                />
+              </path>
+              <path stroke-dasharray="12" stroke-dashoffset="12" d="M7 12L14 19M7 12L14 5">
+                <animate
+                  fill="freeze"
+                  attributeName="stroke-dashoffset"
+                  begin="0.6s"
+                  dur="0.2s"
+                  values="12;0"
+                />
+              </path>
+            </g>
           </svg>
           <button @click="handleLogOut" class="w-min">Logout</button>
         </a>

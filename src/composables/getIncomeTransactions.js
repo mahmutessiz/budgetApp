@@ -10,6 +10,7 @@ export default async function useIncomeTransactions(userId) {
       .from('income_transactions')
       .select('income, date')
       .eq('user_id', userId)
+      .order('date', { ascending: false })
 
     if (err) throw err
 
