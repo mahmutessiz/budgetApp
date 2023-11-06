@@ -1,4 +1,4 @@
-import { ref, onUnmounted } from 'vue'
+import { ref } from 'vue'
 import { supabase } from '../lib/supabaseClient'
 
 export default function useUserBalance() {
@@ -38,10 +38,6 @@ export default function useUserBalance() {
     )
     .subscribe()
 
-  onUnmounted(() => {
-    supabase.removeSubscription(channelA)
-  })
-
-  return { balance, error, getUserBalance }
+  return { balance, error, getUserBalance, channelA }
 }
 export { useUserBalance }
