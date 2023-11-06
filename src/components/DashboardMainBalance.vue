@@ -30,7 +30,7 @@
 <script setup>
 import { useUserBalance } from '../composables/getBalance.js'
 import { useGetSpendings } from '../composables/getMonthlySpendingsTotal'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -46,5 +46,9 @@ onMounted(async () => {
 
   const spending = await useGetSpendings(userId)
   userSpending.value = spending
+})
+
+watch(balance, (newBalance) => {
+  userBalance.value = newBalance
 })
 </script>

@@ -1,11 +1,4 @@
-// getBalance.js
-/**
- * The `useUserBalance` function is a Vue composition function that retrieves a user's balance from a
- * Supabase database.
- * @returns The function `useUserBalance` returns an object with three properties: `balance`, `error`,
- * and `getUserBalance`.
- */
-import { ref } from 'vue'
+import { ref, onUnmounted } from 'vue'
 import { supabase } from '../lib/supabaseClient'
 
 export default function useUserBalance() {
@@ -30,6 +23,24 @@ export default function useUserBalance() {
       console.log('No user id provided.')
     }
   }
+
+  const channelA = supabase
+    .channel('schema-db-changes')
+    .on(
+      'postgres_changes',
+      {
+        event: '*',
+        schema: 'public'
+      },
+      async (payload) => {
+        await getUserBalance(payload.new.user_id)
+      }
+    )
+    .subscribe()
+
+  onUnmounted(() => {
+    supabase.removeSubscription(channelA)
+  })
 
   return { balance, error, getUserBalance }
 }
