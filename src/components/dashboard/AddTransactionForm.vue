@@ -14,6 +14,7 @@
       id="amount"
       v-model="amount"
       type="number"
+      step="0.01"
       class="block w-full p-2 mb-4 border-gray-300 rounded shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
     />
     <button
@@ -35,8 +36,12 @@ const category_name = ref('')
 const amount = ref('')
 
 const submitTransaction = async () => {
-  console.log(`Category Name: ${category_name.value}, Amount: ${amount.value}`)
-  await useAddTransactions(route.query.user, category_name.value, amount.value)
+  // Ensure the first letter of the category name is capitalized
+  const formattedCategoryName =
+    category_name.value.charAt(0).toUpperCase() + category_name.value.slice(1)
+
+  console.log(`Category Name: ${formattedCategoryName}, Amount: ${amount.value}`)
+  await useAddTransactions(route.query.user, formattedCategoryName, amount.value)
   category_name.value = ''
   amount.value = ''
 }

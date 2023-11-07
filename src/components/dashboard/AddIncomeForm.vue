@@ -5,6 +5,7 @@
       id="income"
       v-model="income"
       type="number"
+      step="0.01"
       class="block w-full p-2 mb-4 border-gray-300 rounded shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
     />
     <button
