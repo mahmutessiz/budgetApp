@@ -16,9 +16,9 @@ onMounted(async () => {
 <template>
   <div class="w-full p-2 sm:p-4">
     <div class="overflow-x-auto shadow dark:shadow-white/20 h-96 md:h-[30rem]">
-      <table class="table table-zebra table-pin-rows">
+      <table class="table table-xs table-zebra table-pin-rows">
         <!-- head -->
-        <caption class="text-lg py-1 md:text-xl md:py-3">
+        <caption class="text-lg py-1 md:text-lg md:py-3">
           Income history
         </caption>
         <thead>
@@ -31,7 +31,7 @@ onMounted(async () => {
         <!-- tbody -->
         <tbody>
           <tr class="hover" v-for="(transaction, index) in incomeData.value" :key="index">
-            <td></td>
+            <td>{{ index + 1 }}</td>
             <td>${{ transaction.income }}</td>
             <td>{{ transaction.date }}</td>
           </tr>
