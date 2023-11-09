@@ -12,9 +12,9 @@ onMounted(async () => {
 <template>
   <div class="w-full p-2 sm:p-4">
     <div class="overflow-x-auto shadow dark:shadow-white/20 h-96 md:h-[30rem]">
-      <table class="table table-zebra table-pin-rows">
+      <table class="table table-zebra table-pin-rows text-center">
         <!-- head -->
-        <caption class="text-xl py-3">
+        <caption class="text-lg py-1 md:text-xl md:py-3">
           Transactions
         </caption>
         <thead>
