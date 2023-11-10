@@ -8,7 +8,7 @@ export default async function useIncomeTransactions(userId) {
   try {
     let { data, err } = await supabase
       .from('income_transactions')
-      .select('income, date')
+      .select('id, income, date')
       .eq('user_id', userId)
       .order('date', { ascending: false })
 

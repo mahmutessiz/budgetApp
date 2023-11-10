@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useIncomeTransactions } from '../composables/getIncomeTransactions.js'
+import { useDeleteIncome } from '../composables/deleteIncome.js'
 
 const route = useRoute()
 const userId = route.query.user
@@ -12,6 +13,10 @@ onMounted(async () => {
   const { incomeTransactions } = await useIncomeTransactions(userId)
   incomeData.value = incomeTransactions
 })
+
+const onDeleteIncomeClick = async (id, user_id) => {
+  await useDeleteIncome(id, user_id)
+}
 </script>
 <template>
   <div class="w-full p-2 sm:p-4">
@@ -34,6 +39,16 @@ onMounted(async () => {
             <td>{{ index + 1 }}</td>
             <td>${{ transaction.income }}</td>
             <td>{{ transaction.date }}</td>
+            <td>
+              <button class="cursor-pointer" @click="onDeleteIncomeClick(transaction.id, userId)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                  <path
+                    fill="#ff0000"
+                    d="m20.37 8.91l-1 1.73l-12.13-7l1-1.73l3.04 1.75l1.36-.37l4.33 2.5l.37 1.37l3.03 1.75M6 19V7h5.07L18 11v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2m2 0h8v-6.8L10.46 9H8v10Z"
+                  />
+                </svg>
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
