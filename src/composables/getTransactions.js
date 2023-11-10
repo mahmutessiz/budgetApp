@@ -5,7 +5,11 @@ export default async function getTransactions(array) {
   const route = useRoute()
   const userId = route.query.user
 
-  const { data } = await supabase.from('transactions').select().eq('user_id', userId)
+  const { data } = await supabase
+    .from('transactions')
+    .select()
+    .eq('user_id', userId)
+    .order('date', { ascending: false })
 
   array.value = data
 }

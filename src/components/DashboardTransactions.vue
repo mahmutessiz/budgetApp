@@ -10,7 +10,6 @@ const transactions = ref([])
 
 onMounted(async () => {
   await getTransactions(transactions)
-  transactions.value.sort((a, b) => new Date(b.date) - new Date(a.date))
 })
 
 const onDeleteRowClick = async (id, user_id) => {
