@@ -31,6 +31,7 @@ const onDeleteRowClick = async (id, user_id) => {
             <th>Date</th>
             <th>Category</th>
             <th>Amount</th>
+            <th></th>
           </tr>
         </thead>
         <!-- tbody -->

@@ -21,7 +21,7 @@ const onDeleteIncomeClick = async (id, user_id) => {
 <template>
   <div class="w-full p-2 sm:p-4">
     <div class="overflow-x-auto shadow dark:shadow-white/20 h-96 md:h-[30rem]">
-      <table class="table table-xs table-zebra table-pin-rows">
+      <table class="table table-xs table-zebra table-pin-rows text-center">
         <!-- head -->
         <caption class="text-lg py-1 md:text-lg md:py-3">
           Income history
@@ -29,16 +29,17 @@ const onDeleteIncomeClick = async (id, user_id) => {
         <thead>
           <tr class="hover dark:bg-green-900 dark:text-white/60">
             <th></th>
-            <th>Amount</th>
             <th>Date</th>
+            <th>Amount</th>
+            <th></th>
           </tr>
         </thead>
         <!-- tbody -->
         <tbody>
           <tr class="hover" v-for="(transaction, index) in incomeData.value" :key="index">
             <td>{{ index + 1 }}</td>
-            <td>${{ transaction.income }}</td>
             <td>{{ transaction.date }}</td>
+            <td>${{ transaction.income }}</td>
             <td>
               <button class="cursor-pointer" @click="onDeleteIncomeClick(transaction.id, userId)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
