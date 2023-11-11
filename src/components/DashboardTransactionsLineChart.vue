@@ -41,6 +41,9 @@ const options = {
     title: {
       display: true,
       text: 'Spending History'
+    },
+    padding: {
+      autoPadding: true
     }
   }
 }
@@ -49,5 +52,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 </script>
 
 <template>
-  <div class="w-full" v-if="data.labels"><Line :data="data" :options="options" /></div>
+  <div class="w-full rounded-lg p-4 shadow dark:shadow-base-300 bg-base-200" v-if="data.labels">
+    <Line :data="data" :options="options" />
+  </div>
 </template>

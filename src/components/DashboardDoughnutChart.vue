@@ -1,5 +1,5 @@
 <script setup>
-import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'vue-chartjs'
 import { getCategoryTotals } from '../composables/getTransactions.js'
 import { onMounted, ref } from 'vue'
@@ -60,7 +60,8 @@ const options = {
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      display: false
+      display: true,
+      position: 'left'
     },
     title: {
       display: true,
@@ -69,11 +70,11 @@ const options = {
   }
 }
 
-ChartJS.register(ArcElement, Tooltip)
+ChartJS.register(ArcElement, Tooltip, Legend)
 </script>
 
 <template>
-  <div class="w-full flex justify-center items-center rounded-lg p-4">
+  <div class="w-full rounded-lg p-4 shadow dark:shadow-base-300 bg-base-200">
     <Doughnut v-if="data && options" class="" :data="data" :options="options" />
   </div>
 </template>
