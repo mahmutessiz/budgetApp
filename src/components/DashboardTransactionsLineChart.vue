@@ -25,7 +25,8 @@ onMounted(async () => {
         label: 'Spending History',
         backgroundColor: '#00ff00',
         borderColor: '#0000ff',
-        data: Object.values(monthlyTotals)
+        data: Object.values(monthlyTotals),
+        tension: 0.3
       }
     ]
   }
