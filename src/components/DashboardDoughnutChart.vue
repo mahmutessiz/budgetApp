@@ -74,7 +74,7 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 </script>
 
 <template>
-  <div class="w-full rounded-lg p-4 shadow dark:shadow-base-300 bg-base-200">
+  <div class="w-full rounded-lg p-4 shadow dark:shadow-base-300 bg-base-200/50">
     <Doughnut v-if="data && options" class="" :data="data" :options="options" />
   </div>
 </template>
