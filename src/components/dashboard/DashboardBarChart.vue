@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import {
   Chart as ChartJS,
   Title,
@@ -11,52 +12,47 @@ import {
 } from 'chart.js'
 import { Bar } from 'vue-chartjs'
 import { getMonthlyTotals } from '../../composables/getTransactions.js'
+import { useUserIncome } from '../../composables/getIncome.js'
 
 const data = ref({})
+const route = useRoute()
+const userId = route.query.user
 
 onMounted(async () => {
-  const monthlyTotals = await getMonthlyTotals()
+  // The code is calling two functions and assigning their results to variables.
+  const monthlySpendingTotals = await getMonthlyTotals()
+  const { getUserBalance } = useUserIncome()
+  const userIncome = await getUserBalance(userId)
 
+  // The code is creating an array called `incomeData` with a length of 12 and filling it with 0s.
+  // Then, it loops through the `userIncome` object and assigns the values of each month to the
+  // corresponding index in the `incomeData` array. This is done to ensure that the income data is
+  // aligned with the months in the chart.
+  let incomeData = Array(12).fill(0)
+  for (let month in userIncome) {
+    incomeData[month] = userIncome[month]
+  }
+
+  // The code is assigning an object to the `data.value` property. This object contains the necessary
+  // data for the chart component to render the chart.
   data.value = {
-    labels: Object.keys(monthlyTotals),
+    labels: Object.keys(monthlySpendingTotals),
     datasets: [
       {
         label: 'Spending History',
         backgroundColor: '#f87979',
-        data: Object.values(monthlyTotals)
+        data: Object.values(monthlySpendingTotals)
+      },
+      {
+        label: 'Income History',
+        backgroundColor: '#0000ff',
+        data: incomeData
       }
     ]
   }
 })
-/* const data = {
-  labels: [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ],
-  datasets: [
-    {
-      label: 'Data One',
-      backgroundColor: '#f87979',
-      data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
-    },
-    {
-      label: 'Data One',
-      backgroundColor: '#000',
-      data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
-    }
-  ]
-} */
 
+// The `const options` object is defining the options for the chart.
 const options = {
   responsive: true,
   maintainAspectRatio: false
