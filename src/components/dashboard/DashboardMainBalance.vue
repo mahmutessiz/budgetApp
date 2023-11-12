@@ -28,8 +28,8 @@
   </div>
 </template>
 <script setup>
-import { useUserBalance } from '../composables/getBalance.js'
-import { useGetSpendings } from '../composables/getMonthlySpendingsTotal'
+import { useUserBalance } from '../../composables/getBalance.js'
+import { useGetSpendings } from '../../composables/getMonthlySpendingsTotal.js'
 import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 

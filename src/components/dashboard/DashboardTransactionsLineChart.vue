@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { getMonthlyTotals } from '../composables/getTransactions.js'
+import { getMonthlyTotals } from '../../composables/getTransactions.js'
 import {
   Chart as ChartJS,
   CategoryScale,

@@ -1,9 +1,9 @@
 <script setup>
-import DashboardMainBalance from './DashboardMainBalance.vue'
-import DashboardTransactions from './DashboardTransactions.vue'
-import DashboardTransactionsLineChart from './DashboardTransactionsLineChart.vue'
-import DashboardDoughnutChart from './DashboardDoughnutChart.vue'
-import DashboardIncomeTable from './DashboardIncomeTable.vue'
+import DashboardMainBalance from './dashboard/DashboardMainBalance.vue'
+import DashboardTransactions from './dashboard/DashboardTransactions.vue'
+import DashboardTransactionsLineChart from './dashboard/DashboardTransactionsLineChart.vue'
+import DashboardDoughnutChart from './dashboard/DashboardDoughnutChart.vue'
+import DashboardIncomeTable from './dashboard/DashboardIncomeTable.vue'
 </script>
 
 <template>

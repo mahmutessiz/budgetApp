@@ -1,8 +1,8 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { onMounted, ref } from 'vue'
-import { getTransactions } from '../composables/getTransactions.js'
-import { useDeleteRow } from '../composables/deleteTransaction.js'
+import { getTransactions } from '../../composables/getTransactions.js'
+import { useDeleteRow } from '../../composables/deleteTransaction.js'
 
 const route = useRoute()
 const userId = route.query.user

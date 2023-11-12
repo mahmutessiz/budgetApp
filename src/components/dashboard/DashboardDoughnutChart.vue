@@ -1,7 +1,7 @@
 <script setup>
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'vue-chartjs'
-import { getCategoryTotals } from '../composables/getTransactions.js'
+import { getCategoryTotals } from '../../composables/getTransactions.js'
 import { onMounted, ref } from 'vue'
 
 let categoryTotals = ref({})

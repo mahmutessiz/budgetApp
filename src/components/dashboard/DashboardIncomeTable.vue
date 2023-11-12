@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { useIncomeTransactions } from '../composables/getIncomeTransactions.js'
-import { useDeleteIncome } from '../composables/deleteIncome.js'
+import { useIncomeTransactions } from '../../composables/getIncomeTransactions.js'
+import { useDeleteIncome } from '../../composables/deleteIncome.js'
 
 const route = useRoute()
 const userId = route.query.user

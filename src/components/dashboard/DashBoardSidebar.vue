@@ -1,3 +1,53 @@
+<script setup>
+// Script import
+import { supabase } from '../../lib/supabaseClient'
+import { useRouter } from 'vue-router'
+import { onMounted } from 'vue'
+
+// Component import
+import AddIncomeForm from './AddIncomeForm.vue'
+import AddTransactionForm from './AddTransactionForm.vue'
+
+const router = useRouter()
+const handleLogOut = async () => {
+  try {
+    let { error } = await supabase.auth.signOut()
+    await router.push('/')
+    console.log('succesfull logout', error)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const switchTheme = () => {
+  const selectHtml = document.querySelector('html')
+  let theme
+  if (!selectHtml.dataset.theme) {
+    // If the theme is not set, use system settings
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // If the system prefers a dark color scheme
+      theme = 'dark'
+    } else {
+      // If the system prefers a light color scheme
+      theme = 'light'
+    }
+  } else if (selectHtml.dataset.theme === 'light') {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+  selectHtml.dataset.theme = theme
+  // Store the theme preference in localStorage
+  localStorage.setItem('theme', theme)
+}
+onMounted(() => {
+  const storedTheme = localStorage.getItem('theme')
+  if (storedTheme) {
+    document.querySelector('html').dataset.theme = storedTheme
+  }
+})
+</script>
+
 <template>
   <div class="hidden md:block">
     <ul class="menu bg-base-200 w-56">
@@ -97,52 +147,3 @@
     </dialog>
   </div>
 </template>
-<script setup>
-// Script import
-import { supabase } from '../lib/supabaseClient'
-import { useRouter } from 'vue-router'
-import { onMounted } from 'vue'
-
-// Component import
-import AddIncomeForm from './dashboard/AddIncomeForm.vue'
-import AddTransactionForm from './dashboard/AddTransactionForm.vue'
-
-const router = useRouter()
-const handleLogOut = async () => {
-  try {
-    let { error } = await supabase.auth.signOut()
-    await router.push('/')
-    console.log('succesfull logout', error)
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-const switchTheme = () => {
-  const selectHtml = document.querySelector('html')
-  let theme
-  if (!selectHtml.dataset.theme) {
-    // If the theme is not set, use system settings
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      // If the system prefers a dark color scheme
-      theme = 'dark'
-    } else {
-      // If the system prefers a light color scheme
-      theme = 'light'
-    }
-  } else if (selectHtml.dataset.theme === 'light') {
-    theme = 'dark'
-  } else {
-    theme = 'light'
-  }
-  selectHtml.dataset.theme = theme
-  // Store the theme preference in localStorage
-  localStorage.setItem('theme', theme)
-}
-onMounted(() => {
-  const storedTheme = localStorage.getItem('theme')
-  if (storedTheme) {
-    document.querySelector('html').dataset.theme = storedTheme
-  }
-})
-</script>
