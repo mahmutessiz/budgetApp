@@ -13,8 +13,6 @@ import {
 } from 'chart.js'
 import { Line } from 'vue-chartjs'
 
-const data = ref({})
-
 onMounted(async () => {
   const monthlyTotals = await getMonthlyTotals()
 
@@ -31,7 +29,7 @@ onMounted(async () => {
     ]
   }
 })
-
+const data = ref({})
 const options = {
   responsive: true,
   maintainAspectRatio: false,
