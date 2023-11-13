@@ -15,10 +15,13 @@ export default function useUserIncome() {
    */
   const getUserBalance = async (userId) => {
     if (userId) {
+      const currentYear = new Date().getFullYear()
       const { data: balanceData, error: fetchError } = await supabase
         .from('income_transactions')
         .select('income, date')
         .eq('user_id', userId)
+        .gte('date', `${currentYear}-01-01T00:00:00`)
+        .lte('date', `${currentYear}-12-31T23:59:59`)
 
       if (fetchError) {
         error.value = fetchError

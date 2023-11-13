@@ -18,7 +18,14 @@ async function getMonthlyTotals() {
   const route = useRoute()
   const userId = route.query.user
 
-  const { data } = await supabase.from('transactions').select('amount, date').eq('user_id', userId)
+  const currentYear = new Date().getFullYear()
+
+  const { data } = await supabase
+    .from('transactions')
+    .select('amount, date')
+    .eq('user_id', userId)
+    .gte('date', `${currentYear}-01-01T00:00:00`)
+    .lte('date', `${currentYear}-12-31T23:59:59`)
 
   let monthlyTotals = {
     January: 0,
@@ -34,8 +41,6 @@ async function getMonthlyTotals() {
     November: 0,
     December: 0
   }
-
-  const currentYear = new Date().getFullYear()
 
   data.forEach((transaction) => {
     let transactionDate = new Date(transaction.date)
@@ -68,10 +73,14 @@ async function getCategoryTotals() {
   const route = useRoute()
   const userId = route.query.user
 
+  const currentYear = new Date().getFullYear()
+
   const { data } = await supabase
     .from('transactions')
     .select('amount, category_name')
     .eq('user_id', userId)
+    .gte('date', `${currentYear}-01-01T00:00:00`)
+    .lte('date', `${currentYear}-12-31T23:59:59`)
 
   let categoryTotals = { categories: [], totalAmounts: [] }
   let categoryIndex = {}
