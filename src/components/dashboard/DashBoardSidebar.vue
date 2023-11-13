@@ -49,9 +49,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="hidden md:block">
-    <ul class="menu bg-base-200 w-56">
-      <li class="flex gap-2 mb-4">
+  <div class="hidden md:block w-full">
+    <ul class="menu bg-base-200/50 backdrop-blur-md gap-4 flex-row-reverse w-full items-center">
+      <li class="flex gap-2">
         <div class="avatar placeholder">
           <div class="dark:bg-neutral-focus bg-green-400 dark:text-neutral-content rounded-md w-8">
             <span class="text-xs">M</span>
@@ -64,6 +64,7 @@ onMounted(() => {
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24">
             <path
               fill="currentColor"
+              class="fill-green-700"
               d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4V7Z"
             />
           </svg>
@@ -92,7 +93,7 @@ onMounted(() => {
       </li>
       <li>
         <a>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-rose-700" viewBox="0 0 24 24">
             <g
               fill="none"
               stroke="currentColor"
