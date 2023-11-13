@@ -1,6 +1,12 @@
 import { ref } from 'vue'
 import { supabase } from '../lib/supabaseClient'
 
+/**
+ * The `useUserBalance` function is a JavaScript function that retrieves a user's balance from a
+ * database and provides a reactive `balance` value, an `error` value, a `getUserBalance` function to
+ * fetch the balance, and a `channelA` object for subscribing to database changes.
+ * @returns The function `useUserBalance` returns an object with the following properties:
+ */
 export default function useUserBalance() {
   const balance = ref(null)
   const error = ref(null)

@@ -14,6 +14,14 @@ export default async function getTransactions(array) {
   array.value = data
 }
 
+/**
+ * The function `getMonthlyTotals` retrieves monthly totals of transactions for a specific user in the
+ * current year.
+ * @returns an object containing the monthly totals for each month of the current year. The object has
+ * keys representing the month names (e.g., "January", "February") and values representing the total
+ * amount for each month.
+ * This function being used in charts
+ */
 async function getMonthlyTotals() {
   const route = useRoute()
   const userId = route.query.user
@@ -69,6 +77,12 @@ async function getMonthlyTotals() {
   return monthlyTotals
 }
 
+/**
+ * The function `getCategoryTotals` retrieves the total amounts for each category of transactions for a
+ * specific user in the current year.
+ * @returns an object called `categoryTotals` which contains two arrays: `categories` and
+ * `totalAmounts`.
+ */
 async function getCategoryTotals() {
   const route = useRoute()
   const userId = route.query.user
