@@ -21,7 +21,7 @@ const onDeleteIncomeClick = async (id, user_id) => {
 <template>
   <div class="w-full p-2 sm:p-4">
     <div class="overflow-x-auto shadow dark:shadow-base-300 h-96 md:h-[30rem]">
-      <table class="table table-xs table-zebra table-pin-rows text-center">
+      <table class="table table-xs table-zebra table-pin-rows text-center -z-10">
         <!-- head -->
         <caption class="text-lg py-1 md:text-lg md:py-3 bg-base-200">
           Income history
@@ -56,3 +56,5 @@ const onDeleteIncomeClick = async (id, user_id) => {
     </div>
   </div>
 </template>
+
+<style></style>
