@@ -1,9 +1,10 @@
 <script setup>
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
+const route = useRoute()
 </script>
 
 <template>
-  <header class="w-full flex justify-between p-4 items-center">
+  <header class="w-full flex justify-between p-4 items-center" v-if="!route.query.user">
     <div class="pl-12">
       <span>Logo</span>
     </div>
