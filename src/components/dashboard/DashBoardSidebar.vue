@@ -50,8 +50,10 @@ onMounted(() => {
 
 <template>
   <div class="z-50 w-full">
-    <ul class="menu bg-base-200/50 backdrop-blur-md gap-4 flex-row-reverse w-full items-center">
-      <li class="flex gap-2">
+    <ul
+      class="menu bg-base-200/50 backdrop-blur-md md:gap-4 flex-row md:flex-row-reverse w-full justify-center items-center"
+    >
+      <li class="gap-2 hidden">
         <div class="avatar placeholder">
           <div class="dark:bg-neutral-focus bg-green-400 dark:text-neutral-content rounded-md w-8">
             <span class="text-xs">M</span>

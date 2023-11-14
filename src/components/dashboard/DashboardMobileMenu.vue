@@ -1,5 +1,5 @@
 <template>
-  <div class="md:hidden">
+  <div class="hidden">
     <div class="btm-nav">
       <button class="text-accent">
         <label class="btn btn-circle border-none bg-transparent swap swap-rotate">
