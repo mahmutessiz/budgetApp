@@ -10,6 +10,30 @@
         <input type="hidden" name="remember" value="true" />
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
+            <label for="name" class="sr-only">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              v-model="name"
+              required
+              class="relative block w-full mt-2 px-3 py-2 input input-bordered focus:outline-none focus:z-10 sm:text-sm"
+              placeholder="Name"
+            />
+          </div>
+          <div>
+            <label for="lastName" class="sr-only">Last Name</label>
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              v-model="lastName"
+              required
+              class="relative block w-full mt-2 px-3 py-2 input input-bordered focus:outline-none focus:z-10 sm:text-sm"
+              placeholder="Last Name"
+            />
+          </div>
+          <div>
             <label for="email-address" class="sr-only">Email address</label>
             <input
               id="email-address"
@@ -55,16 +79,17 @@ import { supabase } from '../lib/supabaseClient.js'
 
 const router = useRouter()
 
+const name = ref('')
+const lastName = ref('')
 const email = ref('')
 const password = ref('')
 
-// The `handleSignUp` function is an asynchronous function that is triggered when the user submits the
-// sign-up form.
 const handleSignUp = async () => {
   try {
     const { data, error } = await supabase.auth.signUp({
       email: email.value,
-      password: password.value
+      password: password.value,
+      user_metadata: { name: name.value, lastName: lastName.value }
     })
 
     if (error) throw error
