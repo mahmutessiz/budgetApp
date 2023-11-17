@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
 
