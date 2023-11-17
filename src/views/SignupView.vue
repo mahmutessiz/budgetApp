@@ -1,9 +1,6 @@
 <script setup>
-import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
-
-const router = useRouter()
 
 const name = ref('')
 const lastName = ref('')
@@ -76,7 +73,7 @@ const handleSignUp = async () => {
 
     if (error) throw error
 
-    if (data) router.push('/login')
+    if (data) alert('A comfirmation e-mail sent to you!')
   } catch (error) {
     signUpError.value = true
     errorMessage.value = error.error_description || error.message
