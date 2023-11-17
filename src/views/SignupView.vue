@@ -1,3 +1,91 @@
+<script setup>
+import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+import { supabase } from '../lib/supabaseClient.js'
+
+const router = useRouter()
+
+const name = ref('')
+const lastName = ref('')
+const email = ref('')
+const password = ref('')
+
+const signUpError = ref(false)
+const errorMessage = ref('')
+
+const handleSignUp = async () => {
+  // Add validation here
+  if (!name.value) {
+    signUpError.value = true
+    errorMessage.value = 'Name is required'
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    signUpError.value = false
+    return
+  }
+
+  if (!lastName.value) {
+    signUpError.value = true
+    errorMessage.value = 'Last Name is required'
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    signUpError.value = false
+    return
+  }
+
+  if (!email.value) {
+    signUpError.value = true
+    errorMessage.value = 'Email is required'
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    signUpError.value = false
+    return
+  }
+
+  if (!password.value) {
+    signUpError.value = true
+    errorMessage.value = 'Password is required'
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    signUpError.value = false
+    return
+  }
+
+  // Password validation
+  if (password.value.length < 6) {
+    signUpError.value = true
+    errorMessage.value = 'Password must be at least 6 characters long'
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    signUpError.value = false
+    return
+  }
+
+  const regex = /^[a-zA-Z0-9]{6,}$/
+  if (!regex.test(password.value)) {
+    signUpError.value = true
+    errorMessage.value = 'Password must contain at least one numeric digit and one letter'
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    signUpError.value = false
+    return
+  }
+
+  try {
+    const { data, error } = await supabase.auth.signUp({
+      email: email.value,
+      password: password.value,
+      options: {
+        data: { name: name.value, lastName: lastName.value }
+      }
+    })
+
+    if (error) throw error
+
+    if (data) router.push('/login')
+  } catch (error) {
+    signUpError.value = true
+    errorMessage.value = error.error_description || error.message
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    signUpError.value = false
+  }
+}
+</script>
+
 <template>
   <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8">
@@ -6,6 +94,24 @@
           Sign up for a new account
         </h2>
       </div>
+      <!-- Error -->
+      <div class="alert alert-error md:w-[80%] m-auto" v-if="signUpError == true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="stroke-current shrink-0 h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <span>{{ errorMessage }}</span>
+      </div>
+      <!-- Signup form -->
       <form class="mt-8 space-y-6" @submit.prevent="handleSignUp">
         <input type="hidden" name="remember" value="true" />
         <div class="rounded-md shadow-sm -space-y-px">
@@ -66,39 +172,12 @@
           >
             Sign up
           </button>
+          <p class="p-4">
+            If you already have an account click
+            <router-link to="/login" class="text-blue-500 font-bold">sign in</router-link>
+          </p>
         </div>
       </form>
     </div>
   </div>
 </template>
-
-<script setup>
-import { useRouter } from 'vue-router'
-import { ref } from 'vue'
-import { supabase } from '../lib/supabaseClient.js'
-
-const router = useRouter()
-
-const name = ref('')
-const lastName = ref('')
-const email = ref('')
-const password = ref('')
-
-const handleSignUp = async () => {
-  try {
-    const { data, error } = await supabase.auth.signUp({
-      email: email.value,
-      password: password.value,
-      options: {
-        data: { name: name.value, lastName: lastName.value }
-      }
-    })
-
-    if (error) throw error
-
-    if (data) router.push('/login')
-  } catch (error) {
-    alert(error.error_description || error.message)
-  }
-}
-</script>

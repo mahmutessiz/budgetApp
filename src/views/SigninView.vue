@@ -1,5 +1,5 @@
 <script setup>
-import { useRouter } from 'vue-router'
+import { useRouter, RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
 
@@ -92,7 +92,7 @@ const handleLogin = async () => {
         </div>
         <p>
           If you don't have an account click
-          <router-link to="/signup" class="text-blue-500">sign up</router-link>
+          <router-link to="/signup" class="text-blue-500 font-bold">sign up</router-link>
         </p>
       </form>
       <div>
