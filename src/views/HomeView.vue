@@ -28,18 +28,17 @@ onMounted(() => {
             <h1
               class="slide-down-appear-text max-w-[700px] text-4xl font-bold md:text-5xl lg:text-7xl"
             >
-              Manage your hotel
+              Track your expenses
               <span
                 class="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent"
-                >easily!</span
+                >smartly!</span
               >
             </h1>
             <transition appear name="slide-down-p">
               <p class="slide-down-appear-p mt-5 max-w-[700px] lg:mt-9">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab odio consequatur et
-                cumque totam commodi ut dolores doloremque aliquam facere. Lorem ipsum dolor sit
-                amet consectetur, adipisicing elit. Ab odio consequatur et cumque totam commodi ut
-                dolores doloremque aliquam facere.
+                With our budget app, you can easily manage your income and spending, set goals and
+                budgets, and monitor your progress. Whether you want to save for a vacation, pay off
+                debt, or plan for retirement, our app will help you achieve your financial dreams.
               </p>
             </transition>
           </div>
@@ -66,9 +65,10 @@ onMounted(() => {
         <div class="px-2 md:w-[40%]">
           <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Easy to use.</h2>
           <p class="">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
-            suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis
-            quae sint repudiandae. Qui iure cum quidem?
+            Our budget app is designed to be user-friendly and intuitive. You can easily enter your
+            income and expenses, categorize them, and view your transactions in a simple dashboard.
+            You can also create custom budgets and goals, and get personalized tips and insights to
+            improve your financial habits.
           </p>
         </div>
       </div>
@@ -76,13 +76,14 @@ onMounted(() => {
     <section class="fade-in mt-12 py-6">
       <div class="mt-4 flex flex-wrap-reverse items-center justify-center gap-4 p-4 sm:flex-nowrap">
         <div class="px-2 md:w-[40%]">
-          <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Easy to manage.</h2>
+          <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Easy to track.</h2>
           <p class="">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
-            suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis
-            quae sint repudiandae. Qui iure cum quidem?
+            Our budget app helps you to manage your money better and avoid unnecessary spending. You
+            can see how much you spend on different categories, compare your spending with your
+            income, and identify areas where you can save more.
           </p>
         </div>
+
         <img
           class="rounded-md"
           src="https://th.bing.com/th/id/OIP.U16dXVXFDPhpbTMd03hbUgHaE8?pid=ImgDet&rs=1"
@@ -98,25 +99,26 @@ onMounted(() => {
           alt=""
         />
         <div class="px-2 md:w-[40%]">
-          <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Easy to track.</h2>
+          <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Convenient to work with.</h2>
           <p class="">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
-            suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis
-            quae sint repudiandae. Qui iure cum quidem?
+            Our budget app does what it should do: help you manage your money. It does not have
+            unnecessary functionalities that will confuse you or distract you from your goals. It is
+            a simple and straightforward tool that lets you track your income and expenses.
           </p>
         </div>
       </div>
     </section>
-    <section class="fade-in my-12 grid w-full place-items-center">
-      <div class="grid w-[90%] place-items-center rounded-md border p-4 md:w-[70%]">
-        <p class="w-[70%]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor tempora praesentium
-          repudiandae ullam, facilis ipsum consequatur non velit veritatis aliquam illum mollitia
-          commodi deserunt, necessitatibus sunt modi, tempore autem nihil.
+    <section class="fade-in my-12 container mx-auto">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 w-full place-items-center rounded-md border border-base-300 py-4 px-2 sm:py-12 sm:px-4 shadow-sm shadow-black/80"
+      >
+        <p class="text-center md:text-left text-lg md:text-xl py-4 font-semibold">
+          Want to manage your money better and reach your financial goals? Our budget app is for
+          you. Start today!
         </p>
         <RouterLink
           to="/signup"
-          class="mt-4 rounded-md btn btn-warning px-4 py-2 hover:shadow-md hover:shadow-black/50"
+          class="btn btn-warning hover:bg-yellow-400 px-12 text-lg hover:shadow-sm hover:shadow-black/50"
         >
           Join us
         </RouterLink>
