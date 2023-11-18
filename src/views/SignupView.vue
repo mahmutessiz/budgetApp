@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
 
 const name = ref('')
@@ -82,6 +82,13 @@ const handleSignUp = async () => {
     signUpError.value = false
   }
 }
+
+onMounted(() => {
+  const storedTheme = localStorage.getItem('theme')
+  if (storedTheme) {
+    document.querySelector('html').dataset.theme = storedTheme
+  }
+})
 </script>
 
 <template>

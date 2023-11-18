@@ -12,7 +12,6 @@ const route = useRoute()
       <ul class="w-full sm:flex justify-between gap-4 pr-12 hidden">
         <li><RouterLink to="/">Home</RouterLink></li>
         <li><RouterLink to="/about">About</RouterLink></li>
-        <li>dark</li>
         <li><RouterLink to="/login">Login</RouterLink></li>
         <li><RouterLink to="/signup">Signup</RouterLink></li>
       </ul>

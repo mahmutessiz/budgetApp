@@ -1,4 +1,5 @@
 <template>
+  <div class="divider"></div>
   <footer class="footer items-center p-4 bg-base text-base">
     <aside class="items-center grid-flow-col">
       <svg
