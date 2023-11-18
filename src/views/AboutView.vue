@@ -1,3 +1,13 @@
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const storedTheme = localStorage.getItem('theme')
+  if (storedTheme) {
+    document.querySelector('html').dataset.theme = storedTheme
+  }
+})
+</script>
 <template>
   <div class="about">
     <h1>This is an about page</h1>

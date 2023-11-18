@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter, RouterLink } from 'vue-router'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
 
 const router = useRouter()
@@ -28,6 +28,13 @@ const handleLogin = async () => {
     }, 5000)
   }
 }
+
+onMounted(() => {
+  const storedTheme = localStorage.getItem('theme')
+  if (storedTheme) {
+    document.querySelector('html').dataset.theme = storedTheme
+  }
+})
 </script>
 <template>
   <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

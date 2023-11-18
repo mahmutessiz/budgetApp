@@ -6,3 +6,12 @@
     <p class="mt-3 text-xl">NOT FOUND!</p>
   </div>
 </template>
+<script setup>
+import { onMounted } from 'vue'
+onMounted(() => {
+  const storedTheme = localStorage.getItem('theme')
+  if (storedTheme) {
+    document.querySelector('html').dataset.theme = storedTheme
+  }
+})
+</script>

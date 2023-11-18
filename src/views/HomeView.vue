@@ -1,9 +1,16 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { onMounted } from 'vue'
 import useIntersectionObserver from '../composables/intersectionObserver'
 
 // Fade in animation from composable for sections
 useIntersectionObserver()
+onMounted(() => {
+  const storedTheme = localStorage.getItem('theme')
+  if (storedTheme) {
+    document.querySelector('html').dataset.theme = storedTheme
+  }
+})
 </script>
 
 <template>
