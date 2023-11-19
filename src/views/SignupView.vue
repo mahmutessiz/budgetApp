@@ -54,7 +54,8 @@ const handleSignUp = async () => {
     return
   }
 
-  const regex = /^[a-zA-Z0-9]{6,}$/
+  const regex = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+){6,}$/
+
   if (!regex.test(password.value)) {
     signUpError.value = true
     errorMessage.value = 'Password must contain at least one numeric digit and one letter'
