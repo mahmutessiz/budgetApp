@@ -1,12 +1,12 @@
 <template>
-  <form @submit.prevent="submitIncome" class="bg-white p-6 rounded shadow-md">
-    <label for="income" class="block mb-2 text-sm font-medium text-gray-700">Income:</label>
+  <form @submit.prevent="submitIncome" class="bg-base-200 p-6 rounded shadow-md">
+    <label for="income" class="block mb-2 text-sm font-medium text-gray-500">Income:</label>
     <input
       id="income"
       v-model="income"
       type="number"
       step="0.01"
-      class="block w-full p-2 mb-4 border-gray-300 rounded shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      class="block w-full p-2 mb-4 border-slate-500 rounded shadow-sm focus:ring-indigo-500 focus:border-slate-500 sm:text-sm"
     />
     <button
       type="submit"

@@ -1,21 +1,21 @@
 <template>
-  <form @submit.prevent="submitTransaction" class="bg-white p-6 rounded shadow-md">
-    <label for="category_name" class="block mb-2 text-sm font-medium text-gray-700"
+  <form @submit.prevent="submitTransaction" class="bg-base-200 p-6 rounded shadow-md">
+    <label for="category_name" class="block mb-2 text-sm font-medium text-gray-500"
       >Category Name:</label
     >
     <input
       id="category_name"
       v-model="category_name"
       type="text"
-      class="block w-full p-2 mb-4 border-gray-300 rounded shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      class="block w-full p-2 mb-4 border-slate-500 rounded shadow-sm focus:ring-indigo-500 focus:border-slate sm:text-sm"
     />
-    <label for="amount" class="block mb-2 text-sm font-medium text-gray-700">Amount:</label>
+    <label for="amount" class="block mb-2 text-sm font-medium text-gray-500">Amount:</label>
     <input
       id="amount"
       v-model="amount"
       type="number"
       step="0.01"
-      class="block w-full p-2 mb-4 border-gray-300 rounded shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      class="block w-full p-2 mb-4 border-slate-500 rounded shadow-sm focus:ring-indigo-500 focus:border-slate sm:text-sm"
     />
     <button
       type="submit"

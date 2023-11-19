@@ -67,6 +67,7 @@ watch(balance, (newBalance) => {
         <div class="stat">
           <div class="stat-title text-base-200" v-if="monthlyIncomeTotal">Total income</div>
           <div class="stat-value text-xl sm:text-4xl">${{ monthlyIncomeTotal }}</div>
+          <div class="stat-desc text-base-200">/Month</div>
           <div class="stat-actions">
             <button class=""></button>
             <button class=""></button>
@@ -84,9 +85,8 @@ watch(balance, (newBalance) => {
       <div class="stats w-[90%] sm:w-auto bg-rose-500 text-base-200">
         <div class="stat" v-if="userSpending">
           <div class="stat-title text-base-200">Total spendings</div>
-          <div class="stat-value text-xl sm:text-4xl">
-            ${{ userSpending }} <span class="text-sm">/month</span>
-          </div>
+          <div class="stat-value text-2xl sm:text-4xl">${{ userSpending }}</div>
+          <div class="stat-desc text-base-200">/Month</div>
           <div class="stat-actions">
             <button class="btn btn-sm bg-base-200" onclick="my_modal_5.showModal()">
               Add transaction
