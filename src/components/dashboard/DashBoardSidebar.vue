@@ -8,38 +8,39 @@ import { onMounted } from 'vue'
 import AddIncomeForm from './AddIncomeForm.vue'
 import AddTransactionForm from './AddTransactionForm.vue'
 
+/**
+ * Logs out the user and navigates to the home page.
+ *
+ * @return {Promise<void>} - Resolves when the user is successfully logged out.
+ */
 const router = useRouter()
 const handleLogOut = async () => {
   try {
-    let { error } = await supabase.auth.signOut()
+    const { error } = await supabase.auth.signOut()
     await router.push('/')
-    console.log('succesfull logout', error)
+    console.log('successful logout', error)
   } catch (error) {
     console.log(error)
   }
 }
 
+/**
+ * Switches the theme of the application based on the user's preference.
+ */
 const switchTheme = () => {
   const selectHtml = document.querySelector('html')
-  let theme
-  if (!selectHtml.dataset.theme) {
-    // If the theme is not set, use system settings
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      // If the system prefers a dark color scheme
-      theme = 'dark'
-    } else {
-      // If the system prefers a light color scheme
-      theme = 'light'
-    }
-  } else if (selectHtml.dataset.theme === 'light') {
-    theme = 'dark'
-  } else {
-    theme = 'light'
-  }
+  const prefersDarkScheme =
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const theme =
+    !selectHtml.dataset.theme || selectHtml.dataset.theme === 'light'
+      ? prefersDarkScheme
+        ? 'dark'
+        : 'light'
+      : 'light'
   selectHtml.dataset.theme = theme
-  // Store the theme preference in localStorage
   localStorage.setItem('theme', theme)
 }
+
 onMounted(() => {
   const storedTheme = localStorage.getItem('theme')
   if (storedTheme) {
