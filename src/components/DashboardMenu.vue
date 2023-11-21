@@ -5,12 +5,17 @@ import MobileMenu from './menu/MobileMenu.vue'
 
 const route = useRoute()
 
+// Define a reactive variable to toggle the sidebar
 const showSidebar = ref(false)
+
+// Function to toggle the sidebar
 const toggleSidebar = () => {
   showSidebar.value = !showSidebar.value
 }
 
+// Watch for changes in the showSidebar variable
 watchEffect(() => {
+  // Set the document body's overflow style based on the value of showSidebar
   if (showSidebar.value) {
     document.body.style.overflow = 'hidden'
   } else {
