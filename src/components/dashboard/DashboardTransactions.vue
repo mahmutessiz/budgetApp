@@ -18,7 +18,7 @@ const onDeleteRowClick = async (id, user_id) => {
 </script>
 <template>
   <div class="w-full p-2 sm:p-4">
-    <div class="overflow-x-auto shadow dark:shadow-base-300 h-96 md:h-[30rem]">
+    <div class="scrollbar overflow-x-auto shadow dark:shadow-base-300 h-96 md:h-[30rem]">
       <table class="table table-xs table-zebra table-pin-rows text-center sm:z-0 -z-10">
         <!-- head -->
         <caption class="text-lg py-1 md:text-lg md:py-3 bg-base-200">

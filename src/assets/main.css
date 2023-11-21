@@ -11,3 +11,23 @@
   max-width: 1800px;
   margin: 0 auto;
 }
+
+/* For Firefox */
+.scrollbar {
+  scrollbar-width: 5px;
+}
+
+/* For Chrome, Edge, and Safari */
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(139, 80, 80);
+  border-radius: 20px;
+  border: 3px solid transparent;
+}
