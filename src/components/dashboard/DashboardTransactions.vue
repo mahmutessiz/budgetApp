@@ -4,6 +4,8 @@ import { onMounted, ref } from 'vue'
 import { getTransactions } from '../../composables/getTransactions.js'
 import { useDeleteRow } from '../../composables/deleteTransaction.js'
 
+import { vAutoAnimate } from '@formkit/auto-animate'
+
 const route = useRoute()
 const userId = route.query.user
 const transactions = ref([])
@@ -34,8 +36,12 @@ const onDeleteRowClick = async (id, user_id) => {
           </tr>
         </thead>
         <!-- tbody -->
-        <tbody>
-          <tr class="hover" v-for="(transaction, index) in transactions" :key="index">
+        <tbody v-auto-animate>
+          <tr
+            class="hover"
+            v-for="(transaction, index) in transactions"
+            :key="transaction.transaction_id"
+          >
             <td>{{ index + 1 }}</td>
             <td>{{ transaction.date }}</td>
             <td>{{ transaction.category_name }}</td>
@@ -43,7 +49,11 @@ const onDeleteRowClick = async (id, user_id) => {
             <td>
               <button
                 class="cursor-pointer"
-                @click="onDeleteRowClick(transaction.transaction_id, userId)"
+                @click="
+                  onDeleteRowClick(transaction.transaction_id, userId).then(() => {
+                    transactions.splice(index, 1)
+                  })
+                "
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
                   <path

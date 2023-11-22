@@ -4,6 +4,8 @@ import { useRoute } from 'vue-router'
 import { useIncomeTransactions } from '../../composables/getIncomeTransactions.js'
 import { useDeleteIncome } from '../../composables/deleteIncome.js'
 
+import { vAutoAnimate } from '@formkit/auto-animate'
+
 const route = useRoute()
 const userId = route.query.user
 
@@ -35,13 +37,20 @@ const onDeleteIncomeClick = async (id, user_id) => {
           </tr>
         </thead>
         <!-- tbody -->
-        <tbody>
+        <tbody v-auto-animate>
           <tr class="hover" v-for="(transaction, index) in incomeData.value" :key="index">
             <td>{{ index + 1 }}</td>
             <td>{{ transaction.date }}</td>
             <td>${{ transaction.income }}</td>
             <td>
-              <button class="cursor-pointer" @click="onDeleteIncomeClick(transaction.id, userId)">
+              <button
+                class="cursor-pointer"
+                @click="
+                  onDeleteIncomeClick(transaction.id, userId).then(() => {
+                    incomeData.value.splice(index, 1)
+                  })
+                "
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
                   <path
                     fill="#ff0000"

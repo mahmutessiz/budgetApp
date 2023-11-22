@@ -10,6 +10,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.1",
     "@supabase/supabase-js": "^2.38.2",
     "chart.js": "^4.4.0",
     "vue": "^3.3.4",
