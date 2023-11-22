@@ -1,6 +1,8 @@
 <template>
   <form @submit.prevent="submitIncome" class="bg-base-200 p-6 rounded shadow-md">
-    <label for="income" class="block mb-2 text-sm font-medium text-gray-500">Income:</label>
+    <label for="income" class="block mb-2 text-sm font-medium text-gray-500"
+      >{{ $t('income') }}:</label
+    >
     <input
       id="income"
       v-model="income"
@@ -12,7 +14,7 @@
       type="submit"
       class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     >
-      Submit
+      {{ $t('submit') }}
     </button>
   </form>
 </template>

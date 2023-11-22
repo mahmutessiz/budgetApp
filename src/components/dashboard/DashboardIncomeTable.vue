@@ -26,13 +26,15 @@ const onDeleteIncomeClick = async (id, user_id) => {
       <table class="table table-xs table-zebra table-pin-rows text-center sm:z-0 -z-10">
         <!-- head -->
         <caption class="text-lg py-1 md:text-lg md:py-3 bg-base-200">
-          Income history
+          {{
+            $t('income_history')
+          }}
         </caption>
         <thead>
           <tr class="hover dark:bg-green-900 dark:text-white/60">
             <th></th>
-            <th>Date</th>
-            <th>Amount</th>
+            <th>{{ $t('date') }}</th>
+            <th>{{ $t('income') }}</th>
             <th></th>
           </tr>
         </thead>

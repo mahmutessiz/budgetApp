@@ -1,0 +1,80 @@
+{
+  "x": "xxxxxxxxxxx DahsboardMainBalance component's locales xxxxxxxxxx",
+
+  "total_balance": "Revenu total",
+  "account_balance": "Solde du compte",
+  "add_funds": "Ajouter des fonds",
+  "month": "Mois",
+  "total_spendings": "Dépenses totales",
+  "add_transaction": "Ajouter une transaction",
+  "click_outside_to_close": "Cliquez à l'extérieur pour fermer",
+  "close": "Fermer",
+
+  "xx": "xxxxxxxxxxx AddTransactionForm component's locales xxxxxxxxxx",
+
+  "category_name": "Nom de la catégorie",
+  "amount": "Montant",
+  "submit": "Soumettre",
+
+  "xxx": "xxxxxxxxxxx AddIncomeForm component's locales xxxxxxxxxx",
+
+  "income": "Revenu",
+
+  "xxxx": "xxxxxxxxxxx DahsboardSidebar component's locales xxxxxxxxxx",
+
+  "transaction": "Transaction",
+  "theme": "Thème",
+  "logout": "Se déconnecter",
+  "add_new": "Ajouter un nouveau",
+
+  "xxxxx": "xxxxxxxxxxx DahsboardTransactions component's locales xxxxxxxxxx",
+
+  "transactions": "Transactions",
+  "date": "Date",
+  "category": "Catégorie",
+
+  "xxxxxx": "xxxxxxxxxxx DahsboardIncomeTable component's locales xxxxxxxxxx",
+
+  "income_history": "Historique des revenus",
+
+  "xxxxxxx": "xxxxxxxxxxx DahsboardMenu component's locales xxxxxxxxxx",
+
+  "home": "Accueil",
+  "about": "À propos",
+  "login": "Se connecter",
+  "signup": "S'inscrire",
+
+  "xxxxxxxx": "xxxxxxxxxxx FooterMain component's locales xxxxxxxxxx",
+
+  "copyright": "Droit d'auteur © 2023 - Tous droits réservés",
+
+  "xxxxxxxxx": "xxxxxxxxxxx SignupView component's locales xxxxxxxxxx",
+
+  "signup_form_title": "Inscrivez-vous pour un nouveau compte",
+  "name": "Prénom",
+  "last_name": "Nom",
+  "email": "Email",
+  "password": "Mot de passe",
+  "already_have_account": "Vous avez déjà un compte?",
+  "click": "cliquez",
+
+  "xxxxxxxxxx": "xxxxxxxxxxx SigninView component's locales xxxxxxxxxx",
+
+  "wrong_email_or_password": "Erreur! Email ou mot de passe incorrect.",
+  "signin_to_account": "Connectez-vous à votre compte",
+  "dont_have_account": "Si vous n'avez pas de compte",
+
+  "xxxxxxxxxxx": "xxxxxxxxxxx HomeView component's locales xxxxxxxxxx",
+
+  "track_your_expenses": "Gérez vos",
+  "smartly": "dépenses",
+  "hero_article": "Avec notre application de budget, vous pouvez facilement gérer vos revenus et dépenses, fixer des objectifs et des budgets, et surveiller vos progrès. Que vous souhaitiez économiser pour des vacances, rembourser une dette ou planifier votre retraite, notre application vous aidera à réaliser vos rêves financiers.",
+  "easy_to_use": "Facile à utiliser.",
+  "easy_to_use_article": "Notre application de budget est conçue pour être conviviale et intuitive. Vous pouvez facilement entrer vos revenus et dépenses, les catégoriser et visualiser vos transactions dans un tableau de bord simple. Vous pouvez également créer des budgets et des objectifs personnalisés et obtenir des conseils et des informations personnalisés pour améliorer vos habitudes financières.",
+  "easy_to_track": "Facile à suivre.",
+  "easy_to_track_article": "Notre application de budget vous aide à mieux gérer votre argent et à éviter les dépenses inutiles. Vous pouvez voir combien vous dépensez dans différentes catégories, comparer vos dépenses à vos revenus et identifier les domaines où vous pouvez économiser davantage.",
+  "convenient": "Pratique à utiliser.",
+  "convenient_article": "Notre application de budget fait ce qu'elle doit faire : vous aider à gérer votre argent. Elle n'a pas de fonctionnalités inutiles qui vous confondraient ou vous distrairaient de vos objectifs. C'est un outil simple et direct qui vous permet de suivre vos revenus et dépenses.",
+  "invite_card_title": "Vous voulez mieux gérer votre argent et atteindre vos objectifs financiers ? Notre application de budget est faite pour vous. Commencez aujourd'hui !",
+  "invite_card_button": "Rejoignez-nous"
+}

@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="submitTransaction" class="bg-base-200 p-6 rounded shadow-md">
     <label for="category_name" class="block mb-2 text-sm font-medium text-gray-500"
-      >Category Name:</label
+      >{{ $t('category_name') }}:</label
     >
     <input
       id="category_name"
@@ -9,7 +9,9 @@
       type="text"
       class="block w-full p-2 mb-4 border-slate-500 rounded shadow-sm focus:ring-indigo-500 focus:border-slate sm:text-sm"
     />
-    <label for="amount" class="block mb-2 text-sm font-medium text-gray-500">Amount:</label>
+    <label for="amount" class="block mb-2 text-sm font-medium text-gray-500"
+      >{{ $t('amount') }}:</label
+    >
     <input
       id="amount"
       v-model="amount"
@@ -21,7 +23,7 @@
       type="submit"
       class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     >
-      Submit
+      {{ $t('submit') }}
     </button>
   </form>
 </template>

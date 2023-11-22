@@ -1,0 +1,80 @@
+{
+  "x": "xxxxxxxxxxx DahsboardMainBalance component's locales xxxxxxxxxx",
+
+  "total_balance": "Total Income",
+  "account_balance": "Account balance",
+  "add_funds": "Add funds",
+  "month": "Month",
+  "total_spendings": "Total spendings",
+  "add_transaction": "Add transaction",
+  "click_outside_to_close": "Click outside to close",
+  "close": "Close",
+
+  "xx": "xxxxxxxxxxx AddTransactionForm component's locales xxxxxxxxxx",
+
+  "category_name": "Category name",
+  "amount": "Amount",
+  "submit": "Submit",
+
+  "xxx": "xxxxxxxxxxx AddIncomeForm component's locales xxxxxxxxxx",
+
+  "income": "Income",
+
+  "xxxx": "xxxxxxxxxxx DahsboardSidebar component's locales xxxxxxxxxx",
+
+  "transaction": "Transaction",
+  "theme": "Theme",
+  "logout": "Logout",
+  "add_new": "Add new",
+
+  "xxxxx": "xxxxxxxxxxx DahsboardTransactions component's locales xxxxxxxxxx",
+
+  "transactions": "Transactions",
+  "date": "Date",
+  "category": "Category",
+
+  "xxxxxx": "xxxxxxxxxxx DahsboardIncomeTable component's locales xxxxxxxxxx",
+
+  "income_history": "Income history",
+
+  "xxxxxxx": "xxxxxxxxxxx DahsboardMenu component's locales xxxxxxxxxx",
+
+  "home": "Home",
+  "about": "About",
+  "login": "Login",
+  "signup": "Sign up",
+
+  "xxxxxxxx": "xxxxxxxxxxx FooterMain component's locales xxxxxxxxxx",
+
+  "copyright": "Copyright © 2023 - All right reserved",
+
+  "xxxxxxxxx": "xxxxxxxxxxx SignupView component's locales xxxxxxxxxx",
+
+  "signup_form_title": "Sign up for a new account",
+  "name": "Name",
+  "last_name": "Last name",
+  "email": "Email",
+  "password": "Password",
+  "already_have_account": "Already have an account?",
+  "click": "click",
+
+  "xxxxxxxxxx": "xxxxxxxxxxx SigninView component's locales xxxxxxxxxx",
+
+  "wrong_email_or_password": "Error! Wrong email or password.",
+  "signin_to_account": "Sign in to your account",
+  "dont_have_account": "If you don't have an account",
+
+  "xxxxxxxxxxx": "xxxxxxxxxxx HomeView component's locales xxxxxxxxxx",
+
+  "track_your_expenses": "Track your expenses",
+  "smartly": "smartly",
+  "hero_article": "With our budget app, you can easily manage your income and spending, set goals and budgets, and monitor your progress. Whether you want to save for a vacation, pay off debt, or plan for retirement, our app will help you achieve your financial dreams.",
+  "easy_to_use": "Easy to use.",
+  "easy_to_use_article": "Our budget app is designed to be user-friendly and intuitive. You can easily enter your income and expenses, categorize them, and view your transactions in a simple dashboard. You can also create custom budgets and goals, and get personalized tips and insights to improve your financial habits.",
+  "easy_to_track": "Easy to track.",
+  "easy_to_track_article": "Our budget app helps you to manage your money better and avoid unnecessary spending. You can see how much you spend on different categories, compare your spending with your income, and identify areas where you can save more.",
+  "convenient": "Convenient to work with.",
+  "convenient_article": "Our budget app does what it should do: help you manage your money. It does not have unnecessary functionalities that will confuse you or distract you from your goals. It is a simple and straightforward tool that lets you track your income and expenses.",
+  "invite_card_title": "Want to manage your money better and reach your financial goals? Our budget app is for you. Start today!",
+  "invite_card_button": "Join us"
+}

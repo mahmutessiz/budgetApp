@@ -54,17 +54,17 @@ onMounted(() => {
             d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span>Error! Wrong e-mail or password.</span>
+        <span>{{ $t('wrong_email_or_password') }}</span>
       </div>
       <div>
-        <h2 class="mt-6 text-center text-3xl font-extrabold">Sign in to your account</h2>
+        <h2 class="mt-6 text-center text-3xl font-extrabold">{{ $t('signin_to_account') }}</h2>
       </div>
       <!-- login form -->
       <form class="mt-8 space-y-6" @submit.prevent="handleLogin">
         <input type="hidden" name="remember" value="true" />
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
-            <label for="email-address" class="sr-only">Email address</label>
+            <label for="email-address" class="sr-only">{{ $t('email') }}</label>
             <input
               id="email-address"
               name="email"
@@ -76,7 +76,7 @@ onMounted(() => {
             />
           </div>
           <div class="">
-            <label for="password" class="sr-only">Password</label>
+            <label for="password" class="sr-only">{{ $t('password') }}</label>
             <input
               id="password"
               name="password"
@@ -94,18 +94,18 @@ onMounted(() => {
             type="submit"
             class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md btn btn-primary"
           >
-            Sign in
+            {{ $t('login') }}
           </button>
         </div>
         <p>
-          If you don't have an account click
-          <router-link to="/signup" class="text-blue-500 font-bold">sign up</router-link>
+          {{ $t('dont_have_account') }} {{ $t('click') }}
+          <router-link to="/signup" class="text-blue-500 font-bold">{{ $t('signup') }}</router-link>
         </p>
       </form>
       <div>
-        <span class="font-bold">e-mail:</span>
+        <span class="font-bold">{{ $t('email') }}:</span>
         mhmtessz123@yopmail.com <br />
-        <span class="font-bold">password:</span> aifcaNrPxGijPMhKGDFb
+        <span class="font-bold">{{ $t('password') }}:</span> aifcaNrPxGijPMhKGDFb
       </div>
     </div>
   </div>

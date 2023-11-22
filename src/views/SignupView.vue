@@ -97,7 +97,7 @@ onMounted(() => {
     <div class="max-w-md w-full space-y-8">
       <div>
         <h2 class="sm:mt-6 text-center text-xl sm:text-3xl font-extrabold">
-          Sign up for a new account
+          {{ $t('signup_form_title') }}
         </h2>
       </div>
       <!-- Error -->
@@ -122,7 +122,7 @@ onMounted(() => {
         <input type="hidden" name="remember" value="true" />
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
-            <label for="name" class="sr-only">Name</label>
+            <label for="name" class="sr-only">{{ $t('name') }}</label>
             <input
               id="name"
               name="name"
@@ -134,7 +134,7 @@ onMounted(() => {
             />
           </div>
           <div>
-            <label for="lastName" class="sr-only">Last Name</label>
+            <label for="lastName" class="sr-only">{{ $t('last_name') }}</label>
             <input
               id="lastName"
               name="lastName"
@@ -146,7 +146,7 @@ onMounted(() => {
             />
           </div>
           <div>
-            <label for="email-address" class="sr-only">Email address</label>
+            <label for="email-address" class="sr-only">{{ $t('email') }}</label>
             <input
               id="email-address"
               name="email"
@@ -158,7 +158,7 @@ onMounted(() => {
             />
           </div>
           <div>
-            <label for="password" class="sr-only">Password</label>
+            <label for="password" class="sr-only">{{ $t('password') }}</label>
             <input
               id="password"
               name="password"
@@ -176,11 +176,11 @@ onMounted(() => {
             type="submit"
             class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md btn btn-primary"
           >
-            Sign up
+            {{ $t('signup') }}
           </button>
           <p class="p-4">
-            If you already have an account click
-            <router-link to="/login" class="text-blue-500 font-bold">sign in</router-link>
+            {{ $t('already_have_account') }} {{ $t('click') }}
+            <router-link to="/login" class="text-blue-500 font-bold">{{ $t('login') }}</router-link>
           </p>
         </div>
       </form>

@@ -1,0 +1,80 @@
+{
+  "x": "xxxxxxxxxxx DahsboardMainBalance bileşeninin yerelleri xxxxxxxxxx",
+
+  "total_balance": "Toplam Gelir",
+  "account_balance": "Hesap bakiyesi",
+  "add_funds": "Fon Ekle",
+  "month": "Ay",
+  "total_spendings": "Toplam harcamalar",
+  "add_transaction": "İşlem Ekle",
+  "click_outside_to_close": "Kapatmak için dışarıya tıklayın",
+  "close": "Kapat",
+
+  "xx": "xxxxxxxxxxx AddTransactionForm bileşeninin yerelleri xxxxxxxxxx",
+
+  "category_name": "Kategori adı",
+  "amount": "Miktar",
+  "submit": "Gönder",
+
+  "xxx": "xxxxxxxxxxx AddIncomeForm bileşeninin yerelleri xxxxxxxxxx",
+
+  "income": "Gelir",
+
+  "xxxx": "xxxxxxxxxxx DahsboardSidebar bileşeninin yerelleri xxxxxxxxxx",
+
+  "transaction": "İşlem",
+  "theme": "Tema",
+  "logout": "Çıkış Yap",
+  "add_new": "Yeni Ekle",
+
+  "xxxxx": "xxxxxxxxxxx DahsboardTransactions bileşeninin yerelleri xxxxxxxxxx",
+
+  "transactions": "İşlemler",
+  "date": "Tarih",
+  "category": "Kategori",
+
+  "xxxxxx": "xxxxxxxxxxx DahsboardIncomeTable bileşeninin yerelleri xxxxxxxxxx",
+
+  "income_history": "Gelir geçmişi",
+
+  "xxxxxxx": "xxxxxxxxxxx DahsboardMenu bileşeninin yerelleri xxxxxxxxxx",
+
+  "home": "Ana Sayfa",
+  "about": "Hakkında",
+  "login": "Giriş Yap",
+  "signup": "Kaydol",
+
+  "xxxxxxxx": "xxxxxxxxxxx FooterMain bileşeninin yerelleri xxxxxxxxxx",
+
+  "copyright": "Telif Hakkı © 2023 - Tüm hakları saklıdır",
+
+  "xxxxxxxxx": "xxxxxxxxxxx SignupView bileşeninin yerelleri xxxxxxxxxx",
+
+  "signup_form_title": "Yeni bir hesap için kaydolun",
+  "name": "Ad",
+  "last_name": "Soyad",
+  "email": "E-posta",
+  "password": "Şifre",
+  "already_have_account": "Zaten bir hesabınız var mı?",
+  "click": "tıkla",
+
+  "xxxxxxxxxx": "xxxxxxxxxxx SigninView bileşeninin yerelleri xxxxxxxxxx",
+
+  "wrong_email_or_password": "Hata! Yanlış e-posta veya şifre.",
+  "signin_to_account": "Hesabınıza giriş yapın",
+  "dont_have_account": "Eğer bir hesabınız yoksa",
+
+  "xxxxxxxxxxx": "xxxxxxxxxxx HomeView bileşeninin yerelleri xxxxxxxxxx",
+
+  "track_your_expenses": "Bütçe Takibi Yapması",
+  "smartly": "kolay",
+  "hero_article": "Bütçe uygulamamızla, gelirinizi ve harcamalarınızı kolayca yönetebilir, hedefler ve bütçeler belirleyebilir ve ilerlemenizi izleyebilirsiniz. Tatil için birikim yapmak, borç ödemek veya emeklilik planlaması yapmak istiyorsanız, bütçe uygulamamız finansal hedeflerinize ulaşmanıza yardımcı olacaktır.",
+  "easy_to_use": "Kullanımı kolay.",
+  "easy_to_use_article": "Bütçe uygulamamız, kullanıcı dostu ve sezgisel olarak tasarlanmıştır. Gelirinizi ve giderlerinizi kolayca girebilir, bunları kategorilere ayırabilir ve işlemlerinizi basit bir gösterge tablosunda görüntüleyebilirsiniz. Ayrıca özel bütçeler ve hedefler oluşturabilir ve finansal alışkanlıklarınızı iyileştirmek için kişiselleştirilmiş ipuçları ve içgörüler alabilirsiniz.",
+  "easy_to_track": "Takip etmesi kolay.",
+  "easy_to_track_article": "Bütçe uygulamamız, paranızı daha iyi yönetmenize ve gereksiz harcamalardan kaçınmanıza yardımcı olur. Farklı kategorilerde ne kadar harcadığınızı görebilir, harcamalarınızı gelirinizle karşılaştırabilir ve daha fazla tasarruf edebileceğiniz alanları belirleyebilirsiniz.",
+  "convenient": "Çalışması rahat.",
+  "convenient_article": "Bütçe uygulamamız, yapması gerekeni yapar: paranızı yönetmenize yardımcı olur. Sizi karıştıracak veya hedeflerinizden saptıracak gereksiz işlevlere sahip değildir. Gelirinizi ve giderlerinizi takip etmenizi sağlayan basit ve anlaşılır bir araçtır.",
+  "invite_card_title": "Paranızı daha iyi yönetmek ve finansal hedeflerinize ulaşmak mı istiyorsunuz? Bütçe uygulamamız sizin için. Bugün başlayın!",
+  "invite_card_button": "Bize katılın"
+}

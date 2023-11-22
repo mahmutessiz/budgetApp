@@ -2,6 +2,7 @@
 import { ref, watchEffect } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import MobileMenu from './menu/MobileMenu.vue'
+import LangSwitch from './LangSwitch.vue'
 
 const route = useRoute()
 
@@ -31,10 +32,21 @@ watchEffect(() => {
     </div>
     <div>
       <ul class="w-full md:flex justify-between gap-4 pr-12 hidden">
-        <li><RouterLink to="/">Home</RouterLink></li>
-        <li><RouterLink to="/about">About</RouterLink></li>
-        <li><RouterLink to="/login">Login</RouterLink></li>
-        <li><RouterLink to="/signup">Signup</RouterLink></li>
+        <li>
+          <RouterLink to="/">{{ $t('home') }}</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/about">{{ $t('about') }}</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/login">{{ $t('login') }}</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/signup">{{ $t('signup') }}</RouterLink>
+        </li>
+        <li>
+          <LangSwitch />
+        </li>
       </ul>
       <button class="md:hidden" @click="toggleSidebar">
         <!-- hamburger icon -->
@@ -70,25 +82,25 @@ watchEffect(() => {
         @click="toggleSidebar"
         class="bg-base-100 hover:bg-base-200 px-4 py-2 border-b w-[50%] border-gray-400/30 rounded-md text-right"
       >
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">{{ $t('home') }}</RouterLink>
       </li>
       <li
         @click="toggleSidebar"
         class="bg-base-100 hover:bg-base-200 px-4 py-2 border-b w-[50%] border-gray-400/30 rounded-md text-right"
       >
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/about">{{ $t('about') }}</RouterLink>
       </li>
       <li
         @click="toggleSidebar"
         class="bg-base-100 hover:bg-base-200 px-4 py-2 border-b w-[50%] border-gray-400/30 rounded-md text-right"
       >
-        <RouterLink to="/login">Login</RouterLink>
+        <RouterLink to="/login">{{ $t('login') }}</RouterLink>
       </li>
       <li
         @click="toggleSidebar"
         class="bg-base-100 hover:bg-base-200 px-4 py-2 border-b w-[50%] border-gray-400/30 rounded-md text-right"
       >
-        <RouterLink to="/signup">Signup</RouterLink>
+        <RouterLink to="/signup">{{ $t('signup') }}</RouterLink>
       </li>
     </MobileMenu>
   </aside>
