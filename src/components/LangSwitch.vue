@@ -22,14 +22,14 @@ export default {
   },
   methods: {
     updateLanguage() {
-      sessionStorage.setItem('locale', this.$i18n.locale)
+      localStorage.setItem('locale', this.$i18n.locale)
     }
   },
   mounted() {
-    if (sessionStorage.getItem('locale')) {
-      this.$i18n.locale = sessionStorage.getItem('locale')
+    if (localStorage.getItem('locale')) {
+      this.$i18n.locale = localStorage.getItem('locale')
     } else {
-      sessionStorage.setItem('locale', this.$i18n.locale)
+      localStorage.setItem('locale', this.$i18n.locale)
     }
   }
 }
