@@ -4,7 +4,7 @@ import tr from './tr.json'
 import fr from './fr.json'
 
 const i18n = createI18n({
-  locale: 'en',
+  locale: navigator.language,
   fallbackLocale: 'en',
   messages: {
     en: en,
