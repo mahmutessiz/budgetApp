@@ -13,6 +13,8 @@ import {
 import { Bar } from 'vue-chartjs'
 import { getMonthlyTotals } from '../../composables/getTransactions.js'
 import { useUserIncome } from '../../composables/getIncome.js'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const data = ref({})
 const route = useRoute()
@@ -39,12 +41,12 @@ onMounted(async () => {
     labels: Object.keys(monthlySpendingTotals),
     datasets: [
       {
-        label: 'Spending History',
+        label: t('spending_history'),
         backgroundColor: '#f87979',
         data: Object.values(monthlySpendingTotals)
       },
       {
-        label: 'Income History',
+        label: t('income_history'),
         backgroundColor: '#0000ff',
         data: incomeData
       }

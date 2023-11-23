@@ -76,5 +76,19 @@
   "convenient": "Pratique à utiliser.",
   "convenient_article": "Notre application de budget fait ce qu'elle doit faire : vous aider à gérer votre argent. Elle n'a pas de fonctionnalités inutiles qui vous confondraient ou vous distrairaient de vos objectifs. C'est un outil simple et direct qui vous permet de suivre vos revenus et dépenses.",
   "invite_card_title": "Vous voulez mieux gérer votre argent et atteindre vos objectifs financiers ? Notre application de budget est faite pour vous. Commencez aujourd'hui !",
-  "invite_card_button": "Rejoignez-nous"
+  "invite_card_button": "Rejoignez-nous",
+
+  "xxxxxxxxxxxx": "xxxxxxxxxxx Les paramètres régionaux du composant DahsboardBarChart xxxxxxxxxx",
+
+  "spending_history": "Historique des dépenses",
+  "spendings": "Dépenses",
+
+  "xxxxxxxxxxxxx": "xxxxxxxxxxx Alertes et messages d'erreur xxxxxxxxxx",
+  "name_required": "Le nom est obligatoire",
+  "last_name_required": "Le nom de famille est obligatoire",
+  "email_required": "L'email est obligatoire",
+  "password_required": "Le mot de passe est obligatoire",
+  "password_min": "Le mot de passe doit comporter au moins 6 caractères",
+  "password_numeric": "Le mot de passe doit contenir au moins un chiffre et une lettre",
+  "confirm_email": "Un e-mail de confirmation vous a été envoyé !"
 }

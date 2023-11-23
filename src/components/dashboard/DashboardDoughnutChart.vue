@@ -3,6 +3,8 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'vue-chartjs'
 import { getCategoryTotals } from '../../composables/getTransactions.js'
 import { onMounted, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 let categoryTotals = ref({})
 
@@ -65,7 +67,7 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Spendings'
+      text: t('spendings')
     }
   }
 }

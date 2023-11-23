@@ -12,6 +12,8 @@ import {
   Legend
 } from 'chart.js'
 import { Line } from 'vue-chartjs'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 onMounted(async () => {
   const monthlyTotals = await getMonthlyTotals()
@@ -39,7 +41,7 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Spending History'
+      text: t('spending_history')
     },
     padding: {
       autoPadding: true

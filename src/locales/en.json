@@ -76,5 +76,20 @@
   "convenient": "Convenient to work with.",
   "convenient_article": "Our budget app does what it should do: help you manage your money. It does not have unnecessary functionalities that will confuse you or distract you from your goals. It is a simple and straightforward tool that lets you track your income and expenses.",
   "invite_card_title": "Want to manage your money better and reach your financial goals? Our budget app is for you. Start today!",
-  "invite_card_button": "Join us"
+  "invite_card_button": "Join us",
+
+  "xxxxxxxxxxxx": "xxxxxxxxxxx DahsboardBarChart component's locales xxxxxxxxxx",
+
+  "spending_history": "Spendings history",
+  "spendings": "Spendings",
+
+  "xxxxxxxxxxxxx": "xxxxxxxxxxx Alerts and error messages xxxxxxxxxx",
+
+  "name_required": "Name is required",
+  "last_name_required": "Last name is required",
+  "email_required": "Email is required",
+  "password_required": "Password is required",
+  "password_min": "Password must be at least 6 characters",
+  "password_numeric": "Password must contain at least one numeric digit and one letter",
+  "confirm_email": "A comfirmation e-mail sent to you!"
 }

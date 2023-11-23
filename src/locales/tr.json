@@ -76,5 +76,18 @@
   "convenient": "Çalışması rahat.",
   "convenient_article": "Bütçe uygulamamız, yapması gerekeni yapar: paranızı yönetmenize yardımcı olur. Sizi karıştıracak veya hedeflerinizden saptıracak gereksiz işlevlere sahip değildir. Gelirinizi ve giderlerinizi takip etmenizi sağlayan basit ve anlaşılır bir araçtır.",
   "invite_card_title": "Paranızı daha iyi yönetmek ve finansal hedeflerinize ulaşmak mı istiyorsunuz? Bütçe uygulamamız sizin için. Bugün başlayın!",
-  "invite_card_button": "Bize katılın"
+  "invite_card_button": "Bize katılın",
+
+  "xxxxxxxxxxxx": "xxxxxxxxxxx DahsboardBarChart bileşeninin yerel ayarları xxxxxxxxxx",
+  "spending_history": "Harcama geçmişi",
+  "spendings": "Harcamalar",
+
+  "xxxxxxxxxxxxx": "xxxxxxxxxxx Uyarılar ve hata mesajları xxxxxxxxxx",
+  "name_required": "Ad gereklidir",
+  "last_name_required": "Soyadı gereklidir",
+  "email_required": "E-posta gereklidir",
+  "password_required": "Şifre gereklidir",
+  "password_min": "Şifre en az 6 karakter olmalıdır",
+  "password_numeric": "Şifre en az bir rakam ve bir harf içermelidir",
+  "confirm_email": "Size bir onay e-postası gönderildi!"
 }

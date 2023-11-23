@@ -2,6 +2,8 @@
 import { RouterLink } from 'vue-router'
 import { ref, onMounted } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const name = ref('')
 const lastName = ref('')
@@ -15,7 +17,7 @@ const handleSignUp = async () => {
   // Add validation here
   if (!name.value) {
     signUpError.value = true
-    errorMessage.value = 'Name is required'
+    errorMessage.value = t('name_required')
     await new Promise((resolve) => setTimeout(resolve, 3000))
     signUpError.value = false
     return
@@ -23,7 +25,7 @@ const handleSignUp = async () => {
 
   if (!lastName.value) {
     signUpError.value = true
-    errorMessage.value = 'Last Name is required'
+    errorMessage.value = t('last_name_required')
     await new Promise((resolve) => setTimeout(resolve, 3000))
     signUpError.value = false
     return
@@ -31,7 +33,7 @@ const handleSignUp = async () => {
 
   if (!email.value) {
     signUpError.value = true
-    errorMessage.value = 'Email is required'
+    errorMessage.value = t('email_required')
     await new Promise((resolve) => setTimeout(resolve, 3000))
     signUpError.value = false
     return
@@ -39,7 +41,7 @@ const handleSignUp = async () => {
 
   if (!password.value) {
     signUpError.value = true
-    errorMessage.value = 'Password is required'
+    errorMessage.value = t('password_required')
     await new Promise((resolve) => setTimeout(resolve, 3000))
     signUpError.value = false
     return
@@ -48,7 +50,7 @@ const handleSignUp = async () => {
   // Password validation
   if (password.value.length < 6) {
     signUpError.value = true
-    errorMessage.value = 'Password must be at least 6 characters long'
+    errorMessage.value = t('password_min')
     await new Promise((resolve) => setTimeout(resolve, 3000))
     signUpError.value = false
     return
@@ -58,7 +60,7 @@ const handleSignUp = async () => {
 
   if (!regex.test(password.value)) {
     signUpError.value = true
-    errorMessage.value = 'Password must contain at least one numeric digit and one letter'
+    errorMessage.value = t('password_numeric')
     await new Promise((resolve) => setTimeout(resolve, 3000))
     signUpError.value = false
     return
@@ -75,7 +77,7 @@ const handleSignUp = async () => {
 
     if (error) throw error
 
-    if (data) alert('A comfirmation e-mail sent to you!')
+    if (data) alert(t('confirm_email'))
   } catch (error) {
     signUpError.value = true
     errorMessage.value = error.error_description || error.message
