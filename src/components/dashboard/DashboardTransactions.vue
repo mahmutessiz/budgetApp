@@ -14,10 +14,18 @@ onMounted(async () => {
   await getTransactions(transactions)
 })
 
+/**
+ * Deletes a row with the given ID and user ID.
+ *
+ * @param {number} id - The ID of the row to delete.
+ * @param {number} user_id - The ID of the user.
+ * @return {Promise<void>} A Promise that resolves when the row is deleted.
+ */
 const onDeleteRowClick = async (id, user_id) => {
   await useDeleteRow(id, user_id)
 }
 </script>
+
 <template>
   <div class="w-full p-2 sm:p-4">
     <div class="scrollbar overflow-x-auto shadow dark:shadow-base-300 h-96 md:h-[30rem]">
@@ -57,12 +65,7 @@ const onDeleteRowClick = async (id, user_id) => {
                   })
                 "
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
-                  <path
-                    fill="#ff0000"
-                    d="m20.37 8.91l-1 1.73l-12.13-7l1-1.73l3.04 1.75l1.36-.37l4.33 2.5l.37 1.37l3.03 1.75M6 19V7h5.07L18 11v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2m2 0h8v-6.8L10.46 9H8v10Z"
-                  />
-                </svg>
+                <img src="../../assets/icons/delete.svg" alt="delete icon" />
               </button>
             </td>
           </tr>

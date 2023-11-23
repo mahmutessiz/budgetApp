@@ -13,6 +13,11 @@ const password = ref('')
 const signUpError = ref(false)
 const errorMessage = ref('')
 
+/**
+ * Handles the sign up process.
+ *
+ * @return {Promise<void>} - A promise that resolves when the sign up process is complete.
+ */
 const handleSignUp = async () => {
   // Add validation here
   if (!name.value) {
@@ -87,6 +92,7 @@ const handleSignUp = async () => {
 }
 
 onMounted(() => {
+  // Retrieve the stored theme from local storage
   const storedTheme = localStorage.getItem('theme')
   if (storedTheme) {
     document.querySelector('html').dataset.theme = storedTheme
@@ -104,19 +110,7 @@ onMounted(() => {
       </div>
       <!-- Error -->
       <div class="alert alert-error md:w-[80%] m-auto" v-if="signUpError == true">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="stroke-current shrink-0 h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
+        <img src="../assets/icons/error.svg" alt="error icon" />
         <span>{{ errorMessage }}</span>
       </div>
       <!-- Signup form -->
