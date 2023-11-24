@@ -9,23 +9,22 @@
   </form>
 </template>
 
-<script>
-export default {
-  name: 'LocaleSwitcher',
-  data() {
-    return { locales: ['tr', 'fr', 'en'] }
-  },
-  methods: {
-    updateLanguage() {
-      localStorage.setItem('locale', this.$i18n.locale)
-    }
-  },
-  mounted() {
-    if (localStorage.getItem('locale')) {
-      this.$i18n.locale = localStorage.getItem('locale')
-    } else {
-      localStorage.setItem('locale', this.$i18n.locale)
-    }
-  }
+<script setup>
+import { onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
+
+const locales = ['tr', 'fr', 'en']
+
+const updateLanguage = () => {
+  localStorage.setItem('locale', locale.value)
 }
+
+onMounted(() => {
+  if (localStorage.getItem('locale')) {
+    locale.value = localStorage.getItem('locale')
+  } else {
+    localStorage.setItem('locale', locale.value)
+  }
+})
 </script>
