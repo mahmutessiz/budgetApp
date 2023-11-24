@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { onMounted, ref, watchEffect } from 'vue'
+import { onMounted, ref } from 'vue'
 import useIntersectionObserver from '../composables/intersectionObserver'
 
 // Fade in animation from composable for sections
