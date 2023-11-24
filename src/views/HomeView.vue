@@ -13,8 +13,6 @@ onMounted(() => {
 })
 
 const currentTheme = ref(localStorage.getItem('theme'))
-
-console.log(currentTheme.value)
 </script>
 
 <template>
