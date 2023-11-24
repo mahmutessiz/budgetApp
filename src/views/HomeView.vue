@@ -55,11 +55,7 @@ onMounted(() => {
     </section>
     <section class="fade-in mt-12 py-6">
       <div class="mt-4 flex flex-wrap items-center justify-center gap-4 p-4 sm:flex-nowrap">
-        <img
-          class="rounded-md"
-          src="https://th.bing.com/th/id/OIP.U16dXVXFDPhpbTMd03hbUgHaE8?pid=ImgDet&rs=1"
-          alt=""
-        />
+        <img class="rounded-md sm:w-[60%] sm:max-w-[600px]" src="../assets/budgetApp.png" alt="" />
         <div class="px-2 md:w-[40%]">
           <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">{{ $t('easy_to_use') }}</h2>
           <p class="">
@@ -78,8 +74,8 @@ onMounted(() => {
         </div>
 
         <img
-          class="rounded-md"
-          src="https://th.bing.com/th/id/OIP.U16dXVXFDPhpbTMd03hbUgHaE8?pid=ImgDet&rs=1"
+          class="rounded-md sm:w-[60%] sm:max-w-[600px]"
+          src="../assets/budgetApp_2.png"
           alt=""
         />
       </div>
@@ -87,8 +83,8 @@ onMounted(() => {
     <section class="fade-in mt-12 py-6">
       <div class="mt-4 flex flex-wrap items-center justify-center gap-4 p-4 sm:flex-nowrap">
         <img
-          class="rounded-md"
-          src="https://th.bing.com/th/id/OIP.U16dXVXFDPhpbTMd03hbUgHaE8?pid=ImgDet&rs=1"
+          class="rounded-md sm:w-[60%] sm:max-w-[600px]"
+          src="../assets/budgetApp_3.png"
           alt=""
         />
         <div class="px-2 md:w-[40%]">
