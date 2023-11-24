@@ -98,7 +98,7 @@ const currentTheme = ref(localStorage.getItem('theme'))
         <!-- If theme is light, show light image -->
         <img
           class="rounded-md sm:w-[60%] sm:max-w-[600px]"
-          src="../assets/budgetApp_2_light.png"
+          src="../assets/BudgetApp_2_light.png"
           alt=""
           v-if="currentTheme === 'light'"
         />
