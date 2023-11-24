@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { onMounted } from 'vue'
+import { onMounted, ref, watchEffect } from 'vue'
 import useIntersectionObserver from '../composables/intersectionObserver'
 
 // Fade in animation from composable for sections
@@ -11,6 +11,10 @@ onMounted(() => {
     document.querySelector('html').dataset.theme = storedTheme
   }
 })
+
+const currentTheme = ref(localStorage.getItem('theme'))
+
+console.log(currentTheme.value)
 </script>
 
 <template>
@@ -55,7 +59,20 @@ onMounted(() => {
     </section>
     <section class="fade-in mt-12 py-6">
       <div class="mt-4 flex flex-wrap items-center justify-center gap-4 p-4 sm:flex-nowrap">
-        <img class="rounded-md sm:w-[60%] sm:max-w-[600px]" src="../assets/budgetApp.png" alt="" />
+        <!-- If theme is dark, show dark image -->
+        <img
+          class="rounded-md sm:w-[60%] sm:max-w-[600px]"
+          src="../assets/budgetApp.png"
+          alt=""
+          v-if="currentTheme === 'dark'"
+        />
+        <!-- If theme is light, show light image -->
+        <img
+          class="rounded-md sm:w-[60%] sm:max-w-[600px]"
+          src="../assets/budgetApp_light.png"
+          alt=""
+          v-if="currentTheme === 'light'"
+        />
         <div class="px-2 md:w-[40%]">
           <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">{{ $t('easy_to_use') }}</h2>
           <p class="">
@@ -73,19 +90,37 @@ onMounted(() => {
           </p>
         </div>
 
+        <!-- If theme is dark, show dark image -->
         <img
           class="rounded-md sm:w-[60%] sm:max-w-[600px]"
           src="../assets/budgetApp_2.png"
           alt=""
+          v-if="currentTheme === 'dark'"
+        />
+        <!-- If theme is light, show light image -->
+        <img
+          class="rounded-md sm:w-[60%] sm:max-w-[600px]"
+          src="../assets/budgetApp_2_light.png"
+          alt=""
+          v-if="currentTheme === 'light'"
         />
       </div>
     </section>
     <section class="fade-in mt-12 py-6">
       <div class="mt-4 flex flex-wrap items-center justify-center gap-4 p-4 sm:flex-nowrap">
+        <!-- If theme is dark, show dark image -->
         <img
           class="rounded-md sm:w-[60%] sm:max-w-[600px]"
           src="../assets/budgetApp_3.png"
           alt=""
+          v-if="currentTheme === 'dark'"
+        />
+        <!-- If theme is light, show light image -->
+        <img
+          class="rounded-md sm:w-[60%] sm:max-w-[600px]"
+          src="../assets/budgetApp_3_light.png"
+          alt=""
+          v-if="currentTheme === 'light'"
         />
         <div class="px-2 md:w-[40%]">
           <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">
