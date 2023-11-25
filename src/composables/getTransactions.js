@@ -10,6 +10,7 @@ export default async function getTransactions(array) {
     .select()
     .eq('user_id', userId)
     .order('date', { ascending: false })
+    .limit(10)
 
   array.value = data
 }

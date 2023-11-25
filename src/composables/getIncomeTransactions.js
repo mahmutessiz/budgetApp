@@ -24,6 +24,7 @@ export default async function useIncomeTransactions(userId) {
       .gte('date', `${currentYear}-01-01T00:00:00`)
       .lte('date', `${currentYear}-12-31T23:59:59`)
       .order('date', { ascending: false })
+      .limit(10)
 
     if (err) throw err
 

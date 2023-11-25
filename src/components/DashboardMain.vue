@@ -16,7 +16,7 @@ import DashboardBarChart from './dashboard/DashboardBarChart.vue'
       <DashboardTransactionsLineChart class="sm:w-[65%] h-80 md:h-full" />
     </div>
     <div class="mb-12 w-full flex flex-wrap md:flex-nowrap">
-      <DashboardIncomeTable class="md:w-[35%]" />
+      <DashboardIncomeTable class="md:w-[35%] mb-8 sm:mb-auto" />
       <DashboardTransactions class="md:w-[65%]" />
     </div>
   </main>
