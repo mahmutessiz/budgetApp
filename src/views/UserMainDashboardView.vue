@@ -5,7 +5,7 @@ import DashBoardSidebar from '../components/dashboard/DashBoardSidebar.vue'
 
 <template>
   <div>
-    <div class="w-full sticky top-0">
+    <div class="w-full sticky top-0 z-50">
       <DashBoardSidebar class="w-full" />
     </div>
     <DashboardMain />
