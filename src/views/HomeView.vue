@@ -12,6 +12,7 @@ onMounted(() => {
   }
 })
 
+  // there is a bug in here. this code dos not checks if there isn't any data in localStorage
 const currentTheme = ref(localStorage.getItem('theme'))
 </script>
 
