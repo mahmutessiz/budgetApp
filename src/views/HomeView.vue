@@ -12,23 +12,16 @@ onMounted(() => {
   }
 })
 
-// use a default value for the currentTheme variable
-const currentTheme = ref('light')
-// check if the localStorage has a theme key
-if (localStorage.getItem('theme')) {
-  // update the currentTheme variable with the localStorage value
-  currentTheme.value = localStorage.getItem('theme')
-} else {
-  // detect the user's preferred color scheme
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-  // update the currentTheme variable based on the initial preference
-  currentTheme.value = mediaQuery.matches ? 'dark' : 'light'
-  // add an event listener to react to preference changes
-  mediaQuery.addEventListener('change', ({ matches }) => {
-    currentTheme.value = matches ? 'dark' : 'light'
-  })
-}
+// Retrieve the current theme from local storage or default to the user's preferred color scheme
+const currentTheme = ref(
+  localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+)
 
+// Update the current theme when the user's preferred color scheme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({ matches }) => {
+  currentTheme.value = matches ? 'dark' : 'light'
+})
 </script>
 
 <template>
