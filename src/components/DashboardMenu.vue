@@ -27,7 +27,7 @@ watchEffect(() => {
 
 <template>
   <header class="w-full flex justify-between p-4 items-center" v-if="!route.query.user">
-    <button @click="$router.push('/')" class="md:pl-12 cursor-pointer">
+    <button type="button" @click="$router.push('/')" class="md:pl-12 cursor-pointer" title="Home">
       <img src="../assets/logo.png" class="w-28" alt="logo" />
     </button>
     <div>
@@ -51,7 +51,7 @@ watchEffect(() => {
       <!-- mobile -->
       <div class="flex gap-4 md:hidden">
         <LangSwitch />
-        <button @click="toggleSidebar">
+        <button @click="toggleSidebar" title="Menu">
           <!-- hamburger icon -->
           <svg
             class="swap-off fill-current"
@@ -73,7 +73,7 @@ watchEffect(() => {
   >
     <MobileMenu>
       <li>
-        <button class="btn btn-sm btn-error mb-8" @click="toggleSidebar">
+        <button class="btn btn-sm btn-error mb-8" @click="toggleSidebar" title="Close">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
               fill="currentColor"

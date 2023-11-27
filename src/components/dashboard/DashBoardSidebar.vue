@@ -75,16 +75,20 @@ onMounted(() => {
             class="dropdown-content z-[1] menu p-2 shadow-md shadow-black bg-base-100 rounded-box w-52"
           >
             <li>
-              <button onclick="my_modal_2.showModal()">{{ $t('income') }}</button>
+              <button onclick="my_modal_2.showModal()" title="add income">
+                {{ $t('income') }}
+              </button>
             </li>
             <li>
-              <button onclick="my_modal_3.showModal()">{{ $t('transaction') }}</button>
+              <button onclick="my_modal_3.showModal()" title="add transaction">
+                {{ $t('transaction') }}
+              </button>
             </li>
           </ul>
         </div>
       </li>
       <li>
-        <button @click="switchTheme">
+        <button @click="switchTheme" title="change theme">
           <img src="../../assets/icons/theme.svg" alt="theme icon" />
           {{ $t('theme') }}
         </button>
@@ -92,7 +96,7 @@ onMounted(() => {
       <li>
         <a>
           <img src="../../assets/icons/logout.svg" alt="logout icon" />
-          <button @click="handleLogOut" class="">{{ $t('logout') }}</button>
+          <button @click="handleLogOut" title="logout">{{ $t('logout') }}</button>
         </a>
       </li>
     </ul>
@@ -103,7 +107,7 @@ onMounted(() => {
         <AddIncomeForm />
       </div>
       <form method="dialog" class="modal-backdrop">
-        <button>{{ $t('close') }}</button>
+        <button title="close">{{ $t('close') }}</button>
       </form>
     </dialog>
     <!-- add transaction form -->
@@ -113,7 +117,7 @@ onMounted(() => {
         <AddTransactionForm />
       </div>
       <form method="dialog" class="modal-backdrop">
-        <button>{{ $t('close') }}</button>
+        <button title="close">{{ $t('close') }}</button>
       </form>
     </dialog>
   </div>
