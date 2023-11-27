@@ -27,9 +27,9 @@ watchEffect(() => {
 
 <template>
   <header class="w-full flex justify-between p-4 items-center" v-if="!route.query.user">
-    <div class="md:pl-12">
+    <button @click="$router.push('/')" class="md:pl-12 cursor-pointer">
       <img src="../assets/logo.png" class="aspect-video w-24" alt="logo" />
-    </div>
+    </button>
     <div>
       <ul class="w-full md:flex justify-between gap-4 pr-12 hidden">
         <li>
