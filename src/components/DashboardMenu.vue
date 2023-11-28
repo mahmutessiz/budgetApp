@@ -109,30 +109,3 @@ watchEffect(() => {
     </MobileMenu>
   </aside>
 </template>
-
-<style scoped>
-@keyframes slide-in {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-.show-sidebar {
-  animation: slide-in 0.5s forwards;
-}
-
-@keyframes slide-out {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.hide-sidebar {
-  animation: slide-out 0.5s forwards;
-}
-</style>
