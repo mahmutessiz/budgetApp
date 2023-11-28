@@ -7,6 +7,7 @@ onMounted(() => {
     document.querySelector('html').dataset.theme = storedTheme
   }
 })
+console.log("dneme dene")
 </script>
 <template>
   <section class="flex items-center py-10 bg-base-100 xl:h-screen font-poppins">
