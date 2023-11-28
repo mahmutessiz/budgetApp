@@ -42,11 +42,16 @@ const switchTheme = () => {
   localStorage.setItem('theme', theme)
 }
 
-onMounted(() => {
+const userName = ref('')
+onMounted(async () => {
   const storedTheme = localStorage.getItem('theme')
   if (storedTheme) {
     document.querySelector('html').dataset.theme = storedTheme
   }
+
+  // Get the userName from supabase
+  const user = await supabase.auth.getUser()
+  userName.value = user.data.user.user_metadata.name + ' ' + user.data.user.user_metadata.lastName
 })
 
 // Define a reactive variable to toggle the sidebar
@@ -107,7 +112,9 @@ watchEffect(() => {
               </g>
             </svg>
           </div>
-          John Doe
+          <span v-if="userName !== 'undefined undefined'">{{ userName }}</span>
+          <span v-else>John Doe</span>
+
           <div
             class="md:hidden dark:text-neutral-content rounded-md flex justify-center items-center"
           >
