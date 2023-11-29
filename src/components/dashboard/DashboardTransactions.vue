@@ -59,13 +59,18 @@ const onDeleteRowClick = async (id, user_id) => {
             <td>
               <button
                 class="cursor-pointer"
+                disabled="disabled"
                 @click="
                   onDeleteRowClick(transaction.transaction_id, userId).then(() => {
                     transactions.splice(index, 1)
                   })
                 "
               >
-                <img src="../../assets/icons/delete.svg" alt="delete icon" />
+                <img
+                  src="../../assets/icons/delete.svg"
+                  class="opacity-50 cursor-not-allowed"
+                  alt="delete icon"
+                />
               </button>
             </td>
           </tr>
