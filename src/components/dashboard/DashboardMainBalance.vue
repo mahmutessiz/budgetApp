@@ -58,7 +58,7 @@ watch(balance, (newBalance) => {
 
         <div class="stat" v-else>
           <div class="stat-title text-base-200">{{ $t('account_balance') }}</div>
-          <div class="stat-value text-xl sm:text-4xl">$ ******</div>
+          <div class="stat-value text-xl sm:text-4xl">$ 0</div>
           <div class="stat-actions">
             <button class="btn btn-sm bg-base-200" onclick="my_modal_4.showModal()">
               {{ $t('add_funds') }}
@@ -80,11 +80,9 @@ watch(balance, (newBalance) => {
       </div>
       <div class="stat" v-if="!monthlyIncomeTotal">
         <div class="stat-title text-base-200">{{ $t('total_balance') }}</div>
-        <div class="stat-value text-xl sm:text-4xl">$ ******</div>
+        <div class="stat-value text-xl sm:text-4xl">$ 0</div>
         <div class="stat-actions">
-          <button class="btn btn-sm bg-base-200" onclick="my_modal_4.showModal()">
-            {{ $t('add_funds') }}
-          </button>
+          <button class=""></button>
         </div>
       </div>
 
@@ -102,7 +100,7 @@ watch(balance, (newBalance) => {
 
         <div class="stat" v-else>
           <div class="stat-title text-base-200">{{ $t('total_spendings') }}</div>
-          <div class="stat-value">$ ******</div>
+          <div class="stat-value">$ 0</div>
           <div class="stat-actions">
             <button class="btn btn-sm bg-base-200" onclick="my_modal_5.showModal()">
               {{ $t('add_transaction') }}
