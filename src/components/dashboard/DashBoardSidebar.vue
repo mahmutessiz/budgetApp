@@ -166,10 +166,10 @@ watchEffect(() => {
         </button>
       </li>
       <li class="hidden md:block">
-        <a>
+        <div>
           <img src="../../assets/icons/logout.svg" alt="logout icon" />
           <button @click="handleLogOut" title="logout">{{ $t('logout') }}</button>
-        </a>
+        </div>
       </li>
     </ul>
 

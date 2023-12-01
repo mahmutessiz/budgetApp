@@ -50,7 +50,7 @@ watch(balance, (newBalance) => {
           <div class="stat-title text-base-200">{{ $t('account_balance') }}</div>
           <div class="stat-value text-xl sm:text-4xl">${{ userBalance }}</div>
           <div class="stat-actions">
-            <button class="btn btn-sm bg-base-200" onclick="my_modal_4.showModal()">
+            <button class="btn btn-sm bg-base-200" type="button" onclick="my_modal_4.showModal()">
               {{ $t('add_funds') }}
             </button>
           </div>
@@ -60,7 +60,7 @@ watch(balance, (newBalance) => {
           <div class="stat-title text-base-200">{{ $t('account_balance') }}</div>
           <div class="stat-value text-xl sm:text-4xl">$ 0</div>
           <div class="stat-actions">
-            <button class="btn btn-sm bg-base-200" onclick="my_modal_4.showModal()">
+            <button class="btn btn-sm bg-base-200" type="button" onclick="my_modal_4.showModal()">
               {{ $t('add_funds') }}
             </button>
           </div>
@@ -73,8 +73,8 @@ watch(balance, (newBalance) => {
           <div class="stat-value text-xl sm:text-4xl">${{ monthlyIncomeTotal }}</div>
           <div class="stat-desc text-base-200">/{{ $t('month') }}</div>
           <div class="stat-actions">
-            <button class=""></button>
-            <button class=""></button>
+            <span></span>
+            <span></span>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@ watch(balance, (newBalance) => {
         <div class="stat-title text-base-200">{{ $t('total_balance') }}</div>
         <div class="stat-value text-xl sm:text-4xl">$ 0</div>
         <div class="stat-actions">
-          <button class=""></button>
+          <span></span>
         </div>
       </div>
 
