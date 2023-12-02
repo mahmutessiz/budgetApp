@@ -10,6 +10,7 @@ import Loader from '../LoaderMain.vue'
 import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+const isLoading = ref(true) // Loader state
 const route = useRoute()
 const userId = route.query.user
 const userBalance = ref() // User's balance
@@ -17,7 +18,6 @@ const userSpending = ref() // User's spending
 
 const { balance, getUserBalance } = useUserBalance() // Get user's balance
 const monthlyIncomeTotal = ref() // User's monthly income total
-const isLoading = ref(true) // Loader state
 onMounted(async () => {
   try {
     // Get the user's monthly income balance
