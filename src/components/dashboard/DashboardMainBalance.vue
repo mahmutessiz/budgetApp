@@ -5,6 +5,7 @@ import { useUserIncome } from '../../composables/getIncome.js'
 // Component import
 import AddIncomeForm from './AddIncomeForm.vue'
 import AddTransactionForm from './AddTransactionForm.vue'
+import Loader from '../LoaderMain.vue'
 
 import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
@@ -16,22 +17,30 @@ const userSpending = ref() // User's spending
 
 const { balance, getUserBalance } = useUserBalance() // Get user's balance
 const monthlyIncomeTotal = ref() // User's monthly income total
-
+const isLoading = ref(true) // Loader state
 onMounted(async () => {
-  // Get the user's monthly income balance
-  const { getUserBalance: getUserIncomeMonthlyBalance } = useUserIncome()
-  const userIncome = await getUserIncomeMonthlyBalance(userId)
-  const userMonthlyIncomeTotal = ref(userIncome)
-  const currentMonth = new Date().getMonth()
-  monthlyIncomeTotal.value = userMonthlyIncomeTotal.value[currentMonth]
+  try {
+    // Get the user's monthly income balance
+    const { getUserBalance: getUserIncomeMonthlyBalance } = useUserIncome()
+    const userIncome = await getUserIncomeMonthlyBalance(userId)
+    const userMonthlyIncomeTotal = ref(userIncome)
+    const currentMonth = new Date().getMonth()
+    monthlyIncomeTotal.value = userMonthlyIncomeTotal.value[currentMonth]
 
-  // Get the user's balance
-  await getUserBalance(userId)
-  userBalance.value = balance.value
+    // Get the user's balance
+    await getUserBalance(userId)
+    userBalance.value = balance.value
 
-  // Get the user's spending
-  const spending = await useGetSpendings(userId)
-  userSpending.value = spending
+    // Get the user's spending
+    const spending = await useGetSpendings(userId)
+    userSpending.value = spending
+  } catch (error) {
+    console.error(error)
+    // Handle the error here
+  } finally {
+    // Do something after the try/catch
+    isLoading.value = false
+  }
 })
 
 watch(balance, (newBalance) => {
@@ -41,6 +50,7 @@ watch(balance, (newBalance) => {
 </script>
 
 <template>
+  <Loader v-if="isLoading" />
   <div class="w-full p-2 shadow dark:shadow-base-300 bg-base-200/50">
     <div
       class="w-full flex flex-col sm:flex-row sm:px-12 items-center sm:items-baseline justify-center gap-8 sm:gap-0 sm:justify-between sm:py-12"
@@ -83,6 +93,7 @@ watch(balance, (newBalance) => {
         <div class="stat-value text-xl sm:text-4xl">$ 0</div>
         <div class="stat-actions">
           <span></span>
+          <span></span>
         </div>
       </div>
 
@@ -100,7 +111,7 @@ watch(balance, (newBalance) => {
 
         <div class="stat" v-else>
           <div class="stat-title text-base-200">{{ $t('total_spendings') }}</div>
-          <div class="stat-value">$ 0</div>
+          <div class="stat-value text-2xl sm:text-4xl">$ 0</div>
           <div class="stat-actions">
             <button class="btn btn-sm bg-base-200" onclick="my_modal_5.showModal()">
               {{ $t('add_transaction') }}
